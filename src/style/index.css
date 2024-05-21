@@ -1,0 +1,49 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Utility Classes                                      */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 2rem;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Base                                                 */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* :root {
+  
+}
+
+body {
+  font-family: 
+}
+ */
+ 
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Component                                            */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
