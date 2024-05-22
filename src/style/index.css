@@ -502,6 +502,10 @@
   figure {
     background-color: var(--white);
     padding: 25px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
