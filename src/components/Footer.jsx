@@ -14,7 +14,6 @@ import pay7 from "../media/shop.png";
 import pay8 from "../media/visa.png";
 
 
-
 export default function Footer() {
   
   return (
