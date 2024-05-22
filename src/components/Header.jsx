@@ -53,7 +53,7 @@ export default function Header() {
         <div className='header-tags'>
           <h2>NEW ARRIVALS</h2>
           <h2>TRENDING</h2>
-          <h2>MENR</h2>
+          <h2>MEN</h2>
           <h2>WOMEN</h2>
           <h2>ACCESSORIES</h2>
           <h2>SALE</h2>
