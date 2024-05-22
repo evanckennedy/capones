@@ -270,7 +270,7 @@
   border-radius: 5px;
   border: none;
   background-color: #7a53d4;
-  color: #ffffff;
+  color: var(--white);
   cursor: pointer;
 }
 
