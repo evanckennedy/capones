@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function ProductGallery() {
   const [products, setProducts] = useState([]);
@@ -35,17 +37,22 @@ function ProductGallery() {
         </div>
       </div>
       <div className="grid-container">
-        <div className="grid-item flex">
-          <figure>
-            <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="" />
-          </figure>
-          <div className="grid-product-info flex">
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
-
-        </div>
+        {products.map(product => (
+          <Link key={product.id} to={`/product/${product.id}`}>
+            <div className="grid-item flex">
+              <figure>
+                <img src={product.image} alt={product.title} />
+              </figure>
+              <div className="grid-product-info flex">
+                <p>{product.title}</p>
+                <p>{product.category}</p>
+                <p>$ {product.price}</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+        
+        
       </div>
     </>
     

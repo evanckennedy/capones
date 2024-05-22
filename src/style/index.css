@@ -487,7 +487,26 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 40px;
+
+  a, a:visited {
+    color: inherit;
+    text-decoration: none; 
+  }
+}
+
+.grid-item {
+  cursor: pointer;
+  flex-direction: column;
+
+  figure {
+    background-color: var(--white);
+    padding: 25px;
+  }
+}
+
+.grid-product-info {
+  flex-direction: column;
 }
 
 @media (max-width: 770px) {
@@ -502,18 +521,4 @@
   }
 }
 
-.grid-item {
-  cursor: pointer;
-  flex-direction: column;
-  gap: 2px;
 
-  figure {
-    background-color: var(--white);
-    padding: 25px;
-  }
-}
-
-.grid-product-info {
-  flex-direction: column;
-  gap: 5px;
-}
