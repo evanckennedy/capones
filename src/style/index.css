@@ -38,6 +38,7 @@
   --white: #fff;
   --black: #000;
   --pinkish-red: #e23152;
+  --pink-hover: #e54765;
   --bg-gray: #f6f6f6;
   --dark-gray: #7c7c7c;
   --background-main: #f6f6f6;
@@ -253,7 +254,6 @@ body {
 
 }
 
-
 .transparent-layer {
   position: absolute;
   top: 0;
@@ -262,6 +262,7 @@ body {
   height: 100%;
   z-index: 10;
   background-color: rgb(217, 217, 217, 0.3);
+  cursor: pointer;
 }
 
 
@@ -326,7 +327,8 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-;
+  /* filter: grayscale(100%); */
+  
 
   img {
     padding: 50px;
@@ -484,17 +486,36 @@ body {
   background-color: var(--pinkish-red);
 }
 
+.product-green {
+  background-color: rgb(48, 224, 48);
+}
+
+.product-blue {
+  background-color: rgb(64, 64, 209);
+}
 
 .white-image {
-  filter: hue-rotate(0deg);
+  filter: grayscale(75%);
 }
 
 .black-image {
-  filter: hue-rotate(0deg) grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .pink-image {
-  filter: hue-rotate(300deg); 
+  filter: grayscale(70%) hue-rotate(300deg);
+}
+
+.green-image {
+  filter: grayscale(10%) hue-rotate(150deg);
+}
+
+.blue-image {
+  filter: hue-rotate(240deg)
+}
+
+.neutral {
+  filter: grayscale(100%);
 }
 
 .quantity-select {
@@ -617,6 +638,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 20px;
+  margin-top: 50px;
   }
 
 .not-found-img {
@@ -636,19 +658,20 @@ body {
 }
 
 .not-found-title {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 600;
 }
 
 .not-found-btn {
   padding: 5px 15px;
-  border-radius: 5px;
+  height: 45px;
+  width: 120px;
   border: none;
-  background-color: #7a53d4;
+  background-color: var(--pinkish-red);
   color: var(--white);
   cursor: pointer;
 }
 
 .not-found-btn:hover {
-  background-color: #d47a53;
+  background-color: var(--pink-hover);
 }

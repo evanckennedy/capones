@@ -1,4 +1,4 @@
-import errorImage from '../media/errorimg.png';
+import errorImage from '../media/errorimg-pink.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function NotFound() {
@@ -16,7 +16,7 @@ export default function NotFound() {
         <p>Sorry, we couldn't find the page you were looking for. 
            We suggest that you return to home page.
         </p>
-        <button className="not-found-btn" onClick={navigateToHome}>Go to Homepage</button>
+        <button className="not-found-btn" onClick={navigateToHome}>HOME</button>
       </div>
     </section>
   )
