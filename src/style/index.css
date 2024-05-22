@@ -30,15 +30,14 @@
 /*  Base                                                 */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-/* :root {
-  
+:root {
+  --white: #fff;
+  --black: #000;
+  --pinkish-red: #e23152;
+  --bg-gray: #f6f6f6;
+  --dark-gray: #7c7c7c;
 }
 
-body {
-  font-family: 
-}
- */
- 
 .container {
   width: min(100% - 30px, 1080px);
   margin-inline: auto;
