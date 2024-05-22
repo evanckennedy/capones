@@ -41,6 +41,12 @@ function ProductGallery() {
       case 'Sort: Highest Price':
         sortedProducts = [...products].sort((a, b) => b.price - a.price);
         break;
+      case 'Sort: Most Rated':
+        sortedProducts = [...products].sort((a, b) => b.rating.count - a.rating.count);
+        break;
+      case 'Sort: Highest Rated':
+        sortedProducts = [...products].sort((a, b) => b.rating.rate - a.rating.rate);
+        break;
       default:
         sortedProducts = originalProducts;
     }
@@ -56,6 +62,8 @@ function ProductGallery() {
             <option>Sort: Best Match</option>
             <option>Sort: Lowest Price</option>
             <option>Sort: Highest Price</option>
+            <option>Sort: Most Rated</option>
+            <option>Sort: Highest Rated</option>
           </select>
         </div>
       </div>
