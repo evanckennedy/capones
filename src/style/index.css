@@ -483,3 +483,37 @@
   height: 10px;
   pointer-events: none;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 770px) {
+  .grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 570px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));    ;
+  }
+}
+
+.grid-item {
+  cursor: pointer;
+  flex-direction: column;
+  gap: 2px;
+
+  figure {
+    background-color: var(--white);
+    padding: 25px;
+  }
+}
+
+.grid-product-info {
+  flex-direction: column;
+  gap: 5px;
+}

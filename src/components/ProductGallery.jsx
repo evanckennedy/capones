@@ -34,6 +34,19 @@ function ProductGallery() {
           </select>
         </div>
       </div>
+      <div className="grid-container">
+        <div className="grid-item flex">
+          <figure>
+            <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="" />
+          </figure>
+          <div className="grid-product-info flex">
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+
+        </div>
+      </div>
     </>
     
   )
