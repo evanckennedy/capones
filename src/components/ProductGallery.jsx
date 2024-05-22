@@ -13,7 +13,13 @@ function ProductGallery() {
       try {
         const response = await axios.get(URL);
         const data = response.data;
-        setProducts(data);
+        const filteredData = data.filter(product => 
+          product.category === "men's clothing" || product.category === "women's clothing"
+        )
+        filteredData.pop();
+        filteredData.shift();
+        setProducts(filteredData);
+
       } catch (error) {
         console.error(error)
       }
