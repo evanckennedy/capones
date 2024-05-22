@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Judson:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Utility Classes                                      */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -46,6 +50,10 @@
 
 button {
   cursor: pointer;
+}
+
+body {
+  font-family: "Inter", serif;
 }
 
 
@@ -262,7 +270,39 @@ button {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .hero-banner {
+  margin-top: 30px;
   background-image: url("../media/hero.png");
+  width: 100%;
+  height: 584px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Judson", serif;
+
+
+  h2 {
+    font-size: 66px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  button {
+    font-weight: 600;
+    font-size: 25px;
+    padding: 13px 19px;
+    background-color: var(--white);
+    color: var(--black);
+    width: 160px;
+    height: 60px;
+    align-content: center;
+    border: none;
+  }
+
+
+
 }
 
 
@@ -542,6 +582,7 @@ button {
   select {
     border: none;
     background: none;
+    cursor: pointer;
   }
 
   h2 {

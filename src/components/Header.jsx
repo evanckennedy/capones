@@ -48,9 +48,6 @@ export default function Header() {
         ))}
       </div>
 
-
-
-
       <div className='header'>
         <div className='header-main container'>
           <div className='header-buttons'>
@@ -84,7 +81,16 @@ export default function Header() {
 
         </div>
         <div className='header-tags'>
-          <h2>NEW ARRIVALS</h2>
+        <div className='dropdown'>
+            <h2>NEW ARRIVALS</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Just in Time for Spring</li>
+                <li>New Styles</li>
+                <li>Lightly Fire Damaged</li>
+              </ul>
+            </div>
+          </div>
           <div className='dropdown'>
             <h2>TRENDING</h2>
             <div className='dropdown-items'>
@@ -126,7 +132,16 @@ export default function Header() {
               </ul>
             </div>
           </div>
-          <h2>SALE</h2>
+          <div className='dropdown'>
+            <h2>SALE</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Hot Deals</li>
+                <li>Going Fast</li>
+                <li>2023 Fashion</li>
+              </ul>
+            </div>
+          </div>
           <div className='dropdown'>
             <h2>SWEATERS</h2>
             <div className='dropdown-items'>
