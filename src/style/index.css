@@ -675,3 +675,124 @@ body {
 .not-found-btn:hover {
   background-color: var(--pink-hover);
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Product Gallery                                      */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.product-toolbar, .grid-container {
+  font-family: "Inter", sans-serif;
+}
+
+.product-toolbar {
+  align-items: center;
+
+  h3 {
+    font-size: 32px;
+  } 
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+
+  select {
+    background-color: var(--white);
+    border: none;
+    height: 40px;
+    padding: 0 35px 0 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    appearance: none;
+  }
+}
+
+.custom-select::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  background-image: url('../media/icon-dropdown.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+
+  a, a:visited {
+    color: inherit;
+    text-decoration: none; 
+  }
+}
+
+.grid-item {
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+
+  figure {
+    background-color: var(--white);
+    padding: 25px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.grid-product-info {
+  flex-direction: column;
+  gap: 5px;
+
+  p {
+    line-height: 1.2;
+  }
+
+  p:first-of-type {
+    font-weight: 500;
+    /* Enables the use of -webkit-line-clamp and -webkit-box-orient */
+    display: -webkit-box;
+      /* Limits the element to a maximum of 2 lines */
+    -webkit-line-clamp: 2;
+    /* Defines the block progression, vertical means it stacks blocks vertically */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  p:first-of-type::after {
+    /* This acts as a second line when the text only takes up one line. */
+    content: '\00a0';
+    /* Makes it start on a new line */
+    display: block;
+  }
+
+  p:nth-of-type(2) {
+    font-weight: 500;
+    color: var(--dark-gray);
+  }
+
+  p:last-of-type {
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
