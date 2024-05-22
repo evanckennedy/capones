@@ -231,3 +231,49 @@
 
 
 
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Not Found                                            */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  }
+
+.not-found-img {
+  max-width: 60%;
+  width: 400px;
+  height: auto;
+}
+
+.page-not-found {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.not-found-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.not-found-btn {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #7a53d4;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.not-found-btn:hover {
+  background-color: #d47a53;
+}
