@@ -2,12 +2,10 @@
 
 
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import searchIcon from "../media/icon-search.png";
 import cartIcon from "../media/icon-cart.png";
 import signInIcon from "../media/icon-sign-in.png";
-
-
 
 
 export default function Header() {
@@ -18,6 +16,16 @@ export default function Header() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [modalOpen, setModal] = useState(false);
+
+  function closeModal() {
+    setModal(false);
+  }
+
+  function openModal() {
+    setModal(true);
+  };
 
   const adScroll = () => {
     setCurrentIndex((prevIndex) => (prevIndex === ads.length - 1 ? 0 : prevIndex + 1));
@@ -39,6 +47,7 @@ export default function Header() {
           </div>
         ))}
       </div>
+
       <div className='header'>
         <div className='header-main container'>
           <div className='header-buttons'>
@@ -46,18 +55,109 @@ export default function Header() {
           </div>
           <h1 className='header-title'>CAPONES</h1>
           <div className='header-buttons'>
-            <button className='signin-btn'></button>
+            {/* <button className='signin-btn'></button> */}
+            {!modalOpen && <button onClick={openModal} className='open-modal'></button>}
+              {modalOpen && (
+              <>
+              <div className='transparent-layer' onClick={closeModal}></div>
+              <button className='open-modal'></button>
+              <div className="modal">
+                <button onClick={closeModal} className='close-modal'></button>
+                <h2>Login</h2>
+                <p>EMAIL</p>
+                <input type='text'></input>
+                <div className='modal-password-section'>
+                  <p>PASSWORD</p>
+                  <p className='pointer-text'>Forgot password?</p>
+                </div>
+                <input type='text'></input>
+                <button className='modal-signin-btn'>SIGN IN</button>
+                <p className='pointer-text'>Create account</p>
+              </div></>)}
             <button className='cart-btn'></button>
           </div>
+
+
+
         </div>
         <div className='header-tags'>
-          <h2>NEW ARRIVALS</h2>
-          <h2>TRENDING</h2>
-          <h2>MEN</h2>
-          <h2>WOMEN</h2>
-          <h2>ACCESSORIES</h2>
-          <h2>SALE</h2>
-          <h2>SWEATERS</h2>
+        <div className='dropdown'>
+            <h2>NEW ARRIVALS</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Just in Time for Spring</li>
+                <li>New Styles</li>
+                <li>Lightly Fire Damaged</li>
+              </ul>
+            </div>
+          </div>
+          <div className='dropdown'>
+            <h2>TRENDING</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Most Popular</li>
+                <li>Best Sellers</li>
+              </ul>
+            </div>
+          </div>
+          <div className='dropdown'>
+            <h2>MEN</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Pants</li>
+                <li>Shirts</li>
+                <li>Shoes</li>
+              </ul>
+            </div>
+          </div>
+          <div className='dropdown'>
+            <h2>WOMEN</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Pants</li>
+                <li>Shirts</li>
+                <li>Blouses</li>
+                <li>Dresses</li>
+                <li>Shoes</li>
+              </ul>
+            </div>
+          </div>
+          <div className='dropdown'>
+            <h2>ACCESSORIES</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Hats</li>
+                <li>Scarves</li>
+                <li>Sun Glasses</li>
+              </ul>
+            </div>
+          </div>
+          <div className='dropdown'>
+            <h2>SALE</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Hot Deals</li>
+                <li>Going Fast</li>
+                <li>2023 Fashion</li>
+              </ul>
+            </div>
+          </div>
+          <div className='dropdown'>
+            <h2>SWEATERS</h2>
+            <div className='dropdown-items'>
+              <ul>
+                <li>Pullovers</li>
+                <li>Hoodies</li>
+                <li>Ponchos</li>
+                <li>Mumus</li>
+                <li>Capes</li>
+                <li>Jumpsuits</li>
+                <li>Unisheets</li>
+                <li>Muslin Body Rolls</li>
+                <li>Academic and Judical Robes</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>
