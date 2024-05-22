@@ -1,6 +1,11 @@
+
+
+
+
+
 function HeroBanner() {
   return (
-    <div>HeroBanner</div>
+    <div className="hero-banner">HeroBanner</div>
   )
 }
 
