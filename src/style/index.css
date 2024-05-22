@@ -446,8 +446,11 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Product Gallery                                      */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-.product-toolbar {
+.product-toolbar, .grid-container {
   font-family: "Inter", sans-serif;
+}
+
+.product-toolbar {
   align-items: center;
 
   h3 {
@@ -498,6 +501,7 @@
 .grid-item {
   cursor: pointer;
   flex-direction: column;
+  gap: 5px;
 
   figure {
     background-color: var(--white);
@@ -511,6 +515,40 @@
 
 .grid-product-info {
   flex-direction: column;
+  gap: 5px;
+
+  p {
+    line-height: 1.2;
+  }
+
+  p:first-of-type {
+    font-weight: 500;
+    /* Enables the use of -webkit-line-clamp and -webkit-box-orient */
+    display: -webkit-box;
+      /* Limits the element to a maximum of 2 lines */
+    -webkit-line-clamp: 2;
+    /* Defines the block progression, vertical means it stacks blocks vertically */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  p:first-of-type::after {
+    /* This acts as a second line when the text only takes up one line. */
+    content: '\00a0';
+    /* Makes it start on a new line */
+    display: block;
+  }
+
+  p:nth-of-type(2) {
+    font-weight: 500;
+    color: var(--dark-gray);
+  }
+
+  p:last-of-type {
+    font-weight: 700;
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 770px) {

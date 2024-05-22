@@ -56,9 +56,7 @@ function ProductGallery() {
               </div>
             </div>
           </Link>
-        ))}
-        
-        
+        ))}  
       </div>
     </>
     
