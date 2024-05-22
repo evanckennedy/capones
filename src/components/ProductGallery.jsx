@@ -2,20 +2,23 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function ProductGallery() {
-  const [product, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const URL ='https://fakestoreapi.com/products';
 
-  /* useEffect(() => {
+  useEffect(() => {
     async function getProducts() {
       try {
         const response = await axios.get(URL);
-        console.log(response)
+        const data = response.data;
+        setProducts(data);
       } catch (error) {
-        
+        console.error(error)
       }
     }
-  }, []) */
+
+    getProducts();
+  }, [])
 
   return (
     <>
