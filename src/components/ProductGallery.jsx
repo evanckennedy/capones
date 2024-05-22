@@ -52,7 +52,7 @@ function ProductGallery() {
               <div className="grid-product-info flex">
                 <p>{product.title}</p>
                 <p>{product.category}</p>
-                <p>$ {product.price}</p>
+                <p>$ {product.price.toFixed(2)}</p>
               </div>
             </div>
           </Link>
