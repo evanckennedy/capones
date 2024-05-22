@@ -151,6 +151,171 @@
 }
 
 
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Product Page                                         */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.products {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+}
+
+
+.product-image-box {
+  height: 650px;
+  width: 450px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  img {
+    padding: 50px;
+  }
+}
+
+.product-information {
+
+}
+
+.cost {
+  margin: 10px 0;
+  align-items: baseline;
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+.sale {
+  gap: 20px;
+  display: flex;
+  line-height: 20px;
+  height: 20px;
+  align-items: baseline;
+}
+
+.sale-price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+.red-text {
+  color: #ff0000;
+}
+
+.sale-price {
+  font-weight: 800;
+}
+
+.size-chart {
+  display: flex;
+  gap: 20px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.size-chart-btn {
+  background-image: url("../media/measuring-tape.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--background-main);
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  line-height: 50px;
+  margin-top: 10px;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+  
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    width: 40px;
+    height: 35px;
+    
+    &:hover {
+      border: 2px solid rgb(0, 0, 0);
+    }
+  }
+}
+
+.product-colors-title {
+  margin-top: 15px;
+}
+
+.product-colors {
+  display: flex;
+  gap: 20px;
+  
+
+  div {
+    height: 50px;
+    width: 50px;
+    background-color: var(--white);
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      border: 3px solid black;
+    }
+  }
+
+  button {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    border-radius: 50%;
+
+
+  }
+
+}
+
+.product-black {
+  background-color: var(--black);
+}
+
+.product-white {
+  background-color: var(--white);
+}
+
+.product-pink {
+  background-color: rgb(243, 138, 156);
+}
+
+
+.add-to-cart {
+  background-color: var(--black);
+  color: var(--white);
+  width: 100%;
+  height: 45px;
+  margin-top: 15px;
+}
+
+.product-description {
+  margin-top: 15px;
+}
+
+
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Footer                                               */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
