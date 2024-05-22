@@ -35,10 +35,8 @@ function ProductGallery() {
         <div className="custom-select">
           <select className="sort-button" defaultValue="Sort: Best Match">
             <option>Sort: Best Match</option>
-            <option>Lowest Price</option>
-            <option>Highest Price</option>
-            <option>Price + Shipping: lowest first</option>
-            <option>Price + Shipping: highest first</option>
+            <option>Sort: Lowest Price</option>
+            <option>Sort: Highest Price</option>
           </select>
         </div>
       </div>
