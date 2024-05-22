@@ -830,6 +830,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
 .cart-items-table {
@@ -841,6 +842,20 @@ body {
   padding: 5px 10px;
   font-size: 18px;
   text-align: left;
+  vertical-align: top;
+}
+
+
+.cart-items-table th {
+  width: 25%; /* Set a fixed width for each column */
+}
+
+.cart-items-table td {
+  width: 15%; /* Set a fixed width for each column */
+}
+
+.cart-items-table td:first-child {
+  width: 40%; /* Adjust the width of the first column */
 }
 
 .cart-item-img {
@@ -850,7 +865,8 @@ body {
 }
 
 .quantity-select {
-  padding: 3px 18px;
+  padding: 3px 10px;
+  width: auto;
 }
 
 .edit {
@@ -866,4 +882,8 @@ span {
 
 .fourth-row + .fifth-row td {
   padding-top: 20px;
+}
+
+.first-row-header {
+  max-width: calc(2ch * 12); /* Limit the width to fit 12 characters */
 }
