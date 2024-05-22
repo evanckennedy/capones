@@ -1,3 +1,4 @@
+import ProductItem from './ProductItem';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -69,18 +70,7 @@ function ProductGallery() {
       </div>
       <div className="grid-container">
         {products.map(product => (
-          <Link key={product.id} to={`/product/${product.id}`}>
-            <div className="grid-item flex">
-              <figure>
-                <img src={product.image} alt={product.title} />
-              </figure>
-              <div className="grid-product-info flex">
-                <p>{product.title}</p>
-                <p>{product.category}</p>
-                <p>$ {product.price.toFixed(2)}</p>
-              </div>
-            </div>
-          </Link>
+          <ProductItem key={product.id} product={product} />
         ))}  
       </div>
     </>
