@@ -241,10 +241,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  margin: 20px;
+  }
 
 .not-found-img {
-  max-width: 100%;
+  max-width: 60%;
+  width: 400px;
   height: auto;
 }
 
