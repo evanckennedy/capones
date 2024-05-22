@@ -1,7 +1,12 @@
+import ProductGallery from "../components/ProductGallery"
+
 function Home() {
   return (
     <>
-      <div>home</div>
+      <div className="container">
+        <ProductGallery />
+      </div>
+      
     </>
   )
 }

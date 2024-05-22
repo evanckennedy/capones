@@ -442,3 +442,44 @@
 .not-found-btn:hover {
   background-color: #d47a53;
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Product Gallery                                      */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.product-toolbar {
+  font-family: "Inter", sans-serif;
+  align-items: center;
+
+  h3 {
+    font-size: 26px;
+  } 
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+
+  select {
+    background-color: var(--white);
+    border: none;
+    height: 30px;
+    padding: 0 15px;
+    border-radius: 25px;
+    font-size: 17px;
+    cursor: pointer;
+    appearance: none;
+  }
+}
+
+.custom-select::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-image: url('../media/icon-dropdown.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
