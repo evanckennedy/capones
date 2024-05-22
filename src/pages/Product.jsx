@@ -56,9 +56,12 @@ export default function Product(){
       return ((price * 0.6).toFixed(2));
     }
 
-    const colorChange = (colorClass) => {
+    function colorChange(colorClass){
         setImageClass(colorClass);
     };
+
+    
+
 
     return (
         <div className='container'>
@@ -66,7 +69,8 @@ export default function Product(){
                 <div className='products'>
                   <div className='product-image'>
                     <div className='product-image-box'>
-                      <img src={product.image} alt="" className={imageClass} />
+                      <img src={product.image} alt="" className={imageClass}  />
+                      
                     </div>
                   </div>
                   <div className='product-information'>
@@ -109,6 +113,12 @@ export default function Product(){
                       <div>
                         <button className='product-pink' onClick={() => colorChange('pink-image')}></button>
                       </div>
+                      <div>
+                        <button className='product-green' onClick={() => colorChange('green-image')}></button>
+                      </div>
+                      <div>
+                        <button className='product-blue' onClick={() => colorChange('blue-image')}></button>
+                      </div>
                     </div>
                     <div className='quantity'>
                       <h2>QUANTITY</h2>
@@ -128,6 +138,7 @@ export default function Product(){
             ) : (
                 <div>Product not found</div>
             )}
+
         </div>
     );
 };
