@@ -43,12 +43,17 @@ export default function Cart() {
     setCartProducts(updatedCartProducts);
   };
   
+  const handleRemoveItem = (productId) => {
+    const updatedCartProducts = cartProducts.filter(product => product.id !== productId);
+    setCartProducts(updatedCartProducts);
+  };
+
 
   return (
     <div className="container">
     <div className="cart-container">
       <h1 className="cart-title">Shopping Bag</h1>
-      <h2 className="cart-subtitle">{numberOfCartItems} items</h2>
+      <h2 className="cart-subtitle">{cartProducts.length} items</h2>
       <div className="cart-checkout-section">
         {
           cartProducts.map( (product) => 
@@ -61,7 +66,7 @@ export default function Cart() {
                   <th>Each</th>
                   <th>Quantity</th>
                   <th>Total</th>
-                  <th><FaRegTrashCan /></th>
+                  <th><FaRegTrashCan onClick={() => handleRemoveItem(product.id)}/></th>
                 </tr>
               </thead>
               <tbody>
