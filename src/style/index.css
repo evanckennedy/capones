@@ -808,8 +808,15 @@ body {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   gap: 20px;
+}
+
+.cart-sections {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
 }
 
 .cart-title {
@@ -852,10 +859,16 @@ body {
   width: 30%; /* Adjust the width of the first column */
 }
 
+.narrow-row td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .cart-item-img {
-  max-width: 60%;
-  width: 150px;
-  height: auto;
+  width: 190px;
+  height: 222px;
+  padding: 23px 19px 23px 19px; 
+  background-color: var(--white);
 }
 
 .quantity-select {
@@ -881,3 +894,109 @@ span {
 .first-row-header {
   max-width: calc(2ch * 12); /* Limit the width to fit 12 characters */
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Checkout                                             */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.checkout-section {
+  background-color: var(--white);
+  width: 360px;
+  height: 658px;
+  padding: 24px 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.discounts {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.signin-btn {
+  height: 45px;
+  border: 1px solid var(--black);
+  background-color: var(--white);
+  padding: 13px 14px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-service {
+  text-decoration: none;
+  color:  var(--dark-gray);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.order-value {
+  text-decoration: none;
+  color:  var(--black);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.divide-line{
+  background-color: var(--black);
+  height: 2px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.bold-text-total {
+  color:  var(--black);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.sale-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.checkOut-btn {
+  background-color: var(--pinkish-red);
+  padding: 13px 138px;
+  border: none;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.div-cards-img {
+  display: flex;
+  gap: 13px;
+}
+
+.card-img {
+  height: 34px;
+  width: 55px;
+}
+
+.checkout-bottom-text, .returnPolicy {
+  text-decoration: none;
+  color:  var(--dark-gray);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
