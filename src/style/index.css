@@ -1030,6 +1030,7 @@ span {
   gap: 12px;
 }
 
+
 .discounts {
   display: flex;
   justify-content: space-between;
@@ -1125,3 +1126,23 @@ span {
   text-decoration: underline;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Shimmer Effect                                       */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.shimmer {
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 800px 104px;
+  position: relative;
+  min-width: 600px;
+  min-height: 1250px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
