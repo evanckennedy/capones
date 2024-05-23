@@ -105,14 +105,14 @@ export default function Header() {
                     <h2>Login</h2>
                     <button onClick={closeModal} className='close-modal'></button>
                   </div>
-                  <p>EMAIL</p>
+                  <p>Email</p>
                   <input type='text' value={email} onChange={e => setEmail(e.target.value)}></input>
                   <div className='modal-password-section'>
-                    <p>PASSWORD</p>
+                    <p>Password</p>
                   </div>
                   <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                   <p className='pointer-text'>Forgot password?</p>
-                  <button className='modal-signin-btn' onClick={validateForm}>SIGN IN</button>
+                  <button className='modal-signin-btn' onClick={validateForm}>Sign In</button>
                   <p className='error message'>{errorMessage}</p>
                   <p className='pointer-text'>Create account</p>
                 </div>

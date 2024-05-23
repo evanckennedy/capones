@@ -102,7 +102,9 @@ body {
   opacity: 1;
 
 
-/* Header Actual */}
+  /* Header Actual */
+}
+
 .header {
   height: 120px;
   width: 100%;
@@ -128,7 +130,7 @@ body {
   gap: 20px;
 }
 
-.header-tags h2{
+.header-tags h2 {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
@@ -146,7 +148,7 @@ body {
   position: absolute;
   background-color: var(--white);
   width: fit-content;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
   ul {
@@ -202,7 +204,7 @@ body {
 
 }
 
-.search-btn{
+.search-btn {
   background-image: url("../media/icon-search.png");
 }
 
@@ -210,12 +212,12 @@ body {
   background-image: url("../media/icon-search-white.png");
 }
 
-.open-modal{
+.open-modal {
   background-image: url("../media/icon-sign-in.png");
   margin-right: 10px;
 }
 
-.cart-btn{
+.cart-btn {
   background-image: url("../media/icon-cart.png");
 }
 
@@ -254,7 +256,7 @@ body {
   background-color: var(--white);
 
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
@@ -277,16 +279,27 @@ body {
   top: 50%;
   background-color: var(--white);
   z-index: 100;
-  border-radius: 5px; 
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-  input[type=text], input[type=password] {
+  input[type=text],
+  input[type=password] {
     width: 100%;
     padding-left: 10px;
-    height: 34px;
-    border: 1px solid rgb(0, 0, 0, 0.2);
+    height: 38px;
+    border: 1px solid var(--black);
     font-size: 18px;
-    background-color: var(--background-main);
+    background-color: var(--white);
+    margin-top: 5px;
+  }
+
+  input[type=text]:focus,
+  input[type=password]:focus {
+    outline: none;
+  }
+
+  input[type='password']+.pointer-text {
+    margin-top: 5px;
   }
 
   div {
@@ -299,21 +312,22 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    h2 {
+      font-weight: 600;
+      font-size: 21px;
+    }
   }
 
   .modal-signin-btn {
     width: 100%;
-    height: 45px;
-    background-color: var(--black);
+    height: 40px;
+    background-color: var(--pinkish-red);
     color: var(--white);
-    margin-top: 20px;
+    margin-top: 15px;
     transition: all ease 0.8s;
-
-    &:hover {
-      box-shadow: inset 500px 0 0 0 var(--black-hover);
-  }
-
-    
   }
 
   .pointer-text {
@@ -326,10 +340,10 @@ body {
     background-image: url("../media/close.png");
     background-color: transparent;
   }
+
   .pointer-text {
     cursor: pointer;
   }
-
 }
 
 .transparent-layer {
@@ -368,9 +382,10 @@ body {
     color: var(--white);
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     color: inherit;
-    text-decoration: none; 
+    text-decoration: none;
   }
 
   button {
@@ -417,7 +432,7 @@ body {
   justify-content: center;
   align-content: center;
   /* filter: grayscale(100%); */
-  
+
 
   img {
     padding: 50px;
@@ -425,9 +440,7 @@ body {
   }
 }
 
-.product-sold-out {
-
-}
+.product-sold-out {}
 
 
 .sold-out-banner {
@@ -447,9 +460,7 @@ body {
 
 
 
-.product-information {
-
-}
+.product-information {}
 
 
 .product-rating {
@@ -458,8 +469,9 @@ body {
   font-size: 14px;
   line-height: 14px;
   align-items: center;
+
   img {
-    height:30px;
+    height: 30px;
     width: 30px;
   }
 }
@@ -529,7 +541,7 @@ body {
 .sizes {
   display: flex;
   gap: 10px;
-  
+
   div {
     display: flex;
     justify-content: center;
@@ -538,7 +550,7 @@ body {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    
+
     &:hover {
       border: 2px solid rgb(0, 0, 0);
       background-color: var(--black);
@@ -555,10 +567,10 @@ body {
   display: flex;
   gap: 20px;
 
-  
+
 
   div {
-    height:50px;
+    height: 50px;
     width: 50px;
     background-color: var(--white);
     border: 2px solid black;
@@ -568,8 +580,8 @@ body {
     justify-content: center;
     cursor: pointer;
 
-    
-    
+
+
     &:hover {
       border: 3px solid black;
     }
@@ -722,15 +734,18 @@ body {
   align-items: center;
   border-bottom: 2px solid var(--black);
   margin-top: 7px;
+
   input[type=text] {
     flex-grow: 1;
     border: none;
     font-size: 15px;
     background-color: var(--background-main);
   }
+
   input[type=text]:focus {
     outline: none;
   }
+
   button {
     background-color: var(--button-color);
     color: var(--text-color);
@@ -740,7 +755,8 @@ body {
   }
 }
 
-.footer-language-select, .footer-copywrite {
+.footer-language-select,
+.footer-copywrite {
   display: flex;
   justify-content: center;
   margin-top: 35px;
@@ -777,20 +793,24 @@ body {
   background-size: cover;
   background-position: center;
   color: var(--white);
+
   .not-found-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+
     h1 {
       font-size: 200px;
       line-height: 1;
     }
+
     p {
       font-size: 20px;
       margin-top: -10px;
     }
+
     button {
       background-color: var(--pinkish-red);
       color: var(--white);
@@ -812,7 +832,8 @@ body {
   margin-bottom: var(--vertical-section-spacings);
 }
 
-.product-toolbar, .grid-container {
+.product-toolbar,
+.grid-container {
   font-family: "Inter", sans-serif;
 }
 
@@ -821,7 +842,7 @@ body {
 
   h3 {
     font-size: 32px;
-  } 
+  }
 }
 
 .custom-select {
@@ -859,9 +880,10 @@ body {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
 
-  a, a:visited {
+  a,
+  a:visited {
     color: inherit;
-    text-decoration: none; 
+    text-decoration: none;
   }
 }
 
@@ -901,14 +923,14 @@ body {
     font-weight: 500;
     /* Enables the use of -webkit-line-clamp and -webkit-box-orient */
     display: -webkit-box;
-      /* Limits the element to a maximum of 2 lines */
+    /* Limits the element to a maximum of 2 lines */
     -webkit-line-clamp: 2;
     /* Defines the block progression, vertical means it stacks blocks vertically */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   p:first-of-type::after {
     /* This acts as a second line when the text only takes up one line. */
     content: '\00a0';
@@ -965,8 +987,9 @@ body {
   height: 250px;
   object-fit: contain;
 }
-.gallery-image:hover{
-    transform: scale(1.02, 1.02);
+
+.gallery-image:hover {
+  transform: scale(1.02, 1.02);
 }
 
 
@@ -1033,7 +1056,7 @@ body {
 .cart-item-img {
   width: 190px;
   height: 222px;
-  padding: 23px 19px 23px 19px; 
+  padding: 23px 19px 23px 19px;
   background-color: var(--white);
 }
 
@@ -1122,14 +1145,14 @@ body {
 
 .order-service {
   text-decoration: none;
-  color:  var(--dark-gray);
+  color: var(--dark-gray);
   font-weight: 400;
   font-size: 16px;
 }
 
 .order-value {
   text-decoration: none;
-  color:  var(--black);
+  color: var(--black);
   font-weight: 400;
   font-size: 16px;
 }
@@ -1142,7 +1165,7 @@ body {
 }
 
 .bold-text-total {
-  color:  var(--black);
+  color: var(--black);
   font-size: 21px;
   font-weight: 700;
 }
@@ -1174,9 +1197,10 @@ body {
   width: 55px;
 }
 
-.checkout-bottom-text, .returnPolicy {
+.checkout-bottom-text,
+.returnPolicy {
   text-decoration: none;
-  color:  var(--dark-gray);
+  color: var(--dark-gray);
   font-weight: 400;
   font-size: 16px;
 }
@@ -1201,6 +1225,7 @@ body {
   0% {
     background-position: -468px 0;
   }
+
   100% {
     background-position: 468px 0;
   }
