@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import searchIcon from "../media/icon-search.png";
 import cartIcon from "../media/icon-cart.png";
 import signInIcon from "../media/icon-sign-in.png";
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const ads = [
@@ -18,6 +18,15 @@ export default function Header() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [modalOpen, setModal] = useState(false);
+  const [searchOpen, setSearch] = useState(false);
+
+
+  const navigate = useNavigate();
+
+  function redirect(location) {
+      navigate(`/${location}`);
+  };
+
 
   function closeModal() {
     setModal(false);
@@ -26,6 +35,16 @@ export default function Header() {
   function openModal() {
     setModal(true);
   };
+
+  function closeSearch() {
+    setSearch(false);
+  }
+
+  function openSearch() {
+    setSearch(true);
+  };
+
+
 
   const adScroll = () => {
     setCurrentIndex((prevIndex) => (prevIndex === ads.length - 1 ? 0 : prevIndex + 1));
@@ -51,10 +70,27 @@ export default function Header() {
       <div className='header'>
         <div className='header-main container'>
           <div className='header-buttons'>
-            <button className='search-btn'></button>
+          {!searchOpen && <button onClick={openSearch} className='search-btn'></button>}
+            {searchOpen && (
+                <>
+                <div className='transparent-layer' onClick={closeSearch}></div>
+                <button className='search-btn'></button>
+                <div className='search-bar-modal'>
+                  <div className='container search-box'>
+                    <div className='search-components'>
+                      <button className='search-btn search-white-bg'></button>
+                      <input type='text' className='search-input' placeholder='Search our store'></input>
+                    </div>
+                  <button onClick={closeSearch} className='close-search'></button>
+                  </div>
+                </div>
+                
+                </>)}
+    
+            
           </div>
-          <h1 className='header-title'>CAPONES</h1>
-          <div className='header-buttons'>
+          <h1 className='header-title' onClick={() => redirect('')}>CAPONES</h1>
+          <div className='header-buttons cart-login-box'>
             {/* <button className='signin-btn'></button> */}
             {!modalOpen && <button onClick={openModal} className='open-modal'></button>}
               {modalOpen && (
@@ -74,7 +110,7 @@ export default function Header() {
                 <button className='modal-signin-btn'>SIGN IN</button>
                 <p className='pointer-text'>Create account</p>
               </div></>)}
-            <button className='cart-btn'></button>
+            <button className='cart-btn' onClick={() => redirect('cart')} ></button>
           </div>
 
 
