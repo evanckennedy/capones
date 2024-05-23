@@ -717,49 +717,40 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Not Found                                            */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
 .not-found {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-  margin-top: 50px;
-  }
-
-.not-found-img {
-  max-width: 60%;
-  width: 400px;
-  height: auto;
-}
-
-.page-not-found {
-  width: 300px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.not-found-title {
-  font-size: 34px;
-  font-weight: 600;
-}
-
-.not-found-btn {
-  padding: 5px 15px;
-  height: 45px;
-  width: 120px;
-  border: none;
-  background-color: var(--pinkish-red);
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../media/404-img-leaves.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--white);
-  cursor: pointer;
+  .not-found-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    h1 {
+      font-size: 200px;
+      line-height: 1;
+    }
+    p {
+      font-size: 20px;
+      margin-top: -10px;
+    }
+    button {
+      background-color: var(--pinkish-red);
+      color: var(--white);
+      font-size: 20px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  }
 }
 
-.not-found-btn:hover {
-  background-color: var(--pink-hover);
-}
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Product Gallery                                      */
