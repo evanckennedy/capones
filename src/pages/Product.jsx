@@ -7,6 +7,7 @@ export default function Product(){
     const [product, setProduct] = useState(null);
     const [imageClass, setImageClass] = useState('');
     const [addToCart, setAddToCart] = useState('add-to-cart');
+    const [sizeChartOpen, setSizeChart] = useState(false);
 
     useEffect(() => {
         const getProduct = async () => {
@@ -33,6 +34,14 @@ export default function Product(){
       );
   }
 
+  
+  function openSizeChart() {
+    setSizeChart(true);
+  }
+
+  function closeSizeChart() {
+    setSizeChart(false);
+  }
 
     function generateSKU(number, title){
       let letters  = (title.slice(0,4)).toUpperCase().trim();
@@ -93,7 +102,23 @@ export default function Product(){
                     </div>
                     <div className='size-chart'>
                       <h2>Size chart</h2>
-                      <button className='size-chart-btn'></button>
+                      {!searchOpen && <button onClick={openSearch} className='size-chart-btn'></button>}
+                      {searchOpen && (
+                        <>
+                        <div className='transparent-layer' onClick={closeSearch}></div>
+                        <button className='search-btn'></button>
+                        <div className='search-bar-modal'>
+                          <div className='container search-box'>
+                            <div className='search-components'>
+                              <button className='search-btn search-white-bg'></button>
+                              <input type='text' className='search-input' placeholder='Search our store'></input>
+                            </div>
+                          <button onClick={closeSearch} className='close-search'></button>
+                          </div>
+                        </div>
+                        
+                        </>)}
+
                     </div>
                     <div className='sizes'>
                       <div onClick={() => inStock()}>XS</div>
