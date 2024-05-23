@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import star from '../media/icon-star.png';
+import { useParams } from 'react-router-dom';
 
 export default function Product() {
   const [product, setProduct] = useState(null);
   const [imageClass, setImageClass] = useState('');
   const [addToCart, setAddToCart] = useState('add-to-cart');
+  let { slug } = useParams();
 
   const URL ='https://fakestoreapi.com/products';
 
@@ -14,10 +16,10 @@ export default function Product() {
       try {
         const response = await axios.get(URL);
         const data = response.data;
-        const product = fliterClothing(data);
-
-        setProduct(product[0]);
-
+        /* const product = fliterClothing(data); */
+        const productFound = data.find(product => product.id == slug);
+        /* console.log(productFound); */
+        setProduct(productFound);
       } catch (error) {
         console.error('Error, product not found', error);
       }
@@ -26,11 +28,11 @@ export default function Product() {
     getProduct();
   }, []);
 
-  function fliterClothing(products) {
+  /* function fliterClothing(products) {
     return products.filter(product =>
       product.category === "men's clothing" || product.category === "women's clothing"
     );
-  }
+  } */
 
   function generateSKU(number, title) {
     let letters = (title.slice(0, 4)).toUpperCase().trim();
