@@ -20,7 +20,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   function redirect(location) {
-      navigate(`/${location}`);
+    navigate(`/${location}`);
   };
 
   function closeModal() {
@@ -44,17 +44,15 @@ export default function Header() {
   };
 
   useEffect(() => {
-      const interval = setInterval(adScroll, 5000);
-      return () => clearInterval(interval);
-    }, []);
+    const interval = setInterval(adScroll, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   function validateForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(email)) {
-      setErrorMessage('Invalid email')
-    } else if (password === '') {
-      setErrorMessage('Password cannot be empty')
+    if (!emailRegex.test(email) || password === '') {
+      setErrorMessage('Invalid email or password')
     } else {
       setErrorMessage('');
     }
@@ -75,9 +73,9 @@ export default function Header() {
       <div className='header'>
         <div className='header-main container'>
           <div className='header-buttons'>
-          {!searchOpen && <button onClick={openSearch} className='search-btn'></button>}
+            {!searchOpen && <button onClick={openSearch} className='search-btn'></button>}
             {searchOpen && (
-                <>
+              <>
                 <div className='transparent-layer' onClick={closeSearch}></div>
                 <button className='search-btn'></button>
                 <div className='search-bar-modal'>
@@ -86,36 +84,41 @@ export default function Header() {
                       <button className='search-btn search-white-bg'></button>
                       <input type='text' className='search-input' placeholder='Search our store'></input>
                     </div>
-                  <button onClick={closeSearch} className='close-search'></button>
+                    <button onClick={closeSearch} className='close-search'></button>
                   </div>
                 </div>
-                
-                </>)}
-    
-            
+
+              </>)}
+
+
           </div>
           <h1 className='header-title' onClick={() => redirect('')}>CAPONES</h1>
           <div className='header-buttons cart-login-box'>
             {/* <button className='signin-btn'></button> */}
             {!modalOpen && <button onClick={openModal} className='open-modal'></button>}
-              {modalOpen && (
+            {modalOpen && (
               <>
-              <div className='transparent-layer' onClick={closeModal}></div>
-              <button className='open-modal'></button>
-              <div className="modal">
-                <button onClick={closeModal} className='close-modal'></button>
-                <h2>Login</h2>
-                <p>EMAIL</p>
-                <input type='text' value={email} onChange={e => setEmail(e.target.value)}></input>
-                <div className='modal-password-section'>
-                  <p>PASSWORD</p>
+                <div className='transparent-layer' onClick={closeModal}></div>
+                <button className='open-modal'></button>
+                <div className="modal">
+                  <div className="modal-top">
+                    <h2>Login</h2>
+                    <button onClick={closeModal} className='close-modal'></button>
+                  </div>
+                  <p>Email</p>
+                  <input type='text' value={email} onChange={e => setEmail(e.target.value)}></input>
+                  <div className='modal-password-section'>
+                    <p>Password</p>
+                  </div>
+                  <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                   <p className='pointer-text'>Forgot password?</p>
+                  <button className='modal-signin-btn' onClick={validateForm}>Sign In</button>
+                  <p className='error-message'>{errorMessage}</p>
+                  <p className='pointer-text sign-up-message'>
+                    Don't have an account? <span>Sign Up</span>
+                  </p>
                 </div>
-                <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
-                <button className='modal-signin-btn' onClick={validateForm}>SIGN IN</button>
-                <p className='error message'>{errorMessage}</p>
-                <p className='pointer-text'>Create account</p>
-              </div></>)}
+              </>)}
             <button className='cart-btn' onClick={() => redirect('cart')} ></button>
           </div>
 
@@ -123,7 +126,7 @@ export default function Header() {
 
         </div>
         <div className='header-tags'>
-        <div className='dropdown'>
+          <div className='dropdown'>
             <h2>NEW ARRIVALS</h2>
             <div className='dropdown-items'>
               <ul>

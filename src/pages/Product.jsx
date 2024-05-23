@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import star from '../media/icon-star.png';
 import { useParams, useNavigate } from 'react-router-dom';
+import ProductItem from '../components/ProductItem';
 
 export default function Product() {
   const [product, setProduct] = useState(null);
   const [imageClass, setImageClass] = useState('');
   const [addToCart, setAddToCart] = useState('add-to-cart');
   const [buttonActive, setButtonActive] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [activeSize, setActiveSize] = useState('');
+  const [activeColor, setActiveColor] = useState('');
 
   let { slug } = useParams();
   const navigate = useNavigate();
@@ -22,10 +26,16 @@ export default function Product() {
         try {
           const response = await axios.get(URL);
           const data = response.data;
-          /* const product = fliterClothing(data); */
           const productFound = data.find(product => product.id == slug);
-          /* console.log(productFound); */
           setProduct(productFound);
+
+          const filteredData = data.filter(
+            product =>
+              product.category === "men's clothing" || product.category === "women's clothing"
+          );
+          const removeChosenProduct = filteredData.filter(product => product.id != slug);
+          const fourProducts = removeChosenProduct.slice(1, 5);
+          setFilteredProducts(fourProducts);
         } catch (error) {
           console.error('Error, product not found', error);
         }
@@ -35,18 +45,12 @@ export default function Product() {
     }
   }, [slug, navigate]);
 
-  /* function fliterClothing(products) {
-    return products.filter(product =>
-      product.category === "men's clothing" || product.category === "women's clothing"
-    );
-  } */
-
   function generateSKU(number, title) {
-    let letters = (title.slice(0, 4)).toUpperCase().trim();
-    let number1 = ((number * 547).toString()).slice(0, 3);
-    let number2 = ((number * 1483).toString()).slice(0, 4);
-    let number3 = ((number * 2267).toString()).slice(0, 3);
-    return (`SKU: ${letters}-${number1}-${number2}-${number3}`);
+    let letters = title.slice(0, 4).toUpperCase().trim();
+    let number1 = (number * 547).toString().slice(0, 3);
+    let number2 = (number * 1483).toString().slice(0, 4);
+    let number3 = (number * 2267).toString().slice(0, 3);
+    return `SKU: ${letters}-${number1}-${number2}-${number3}`;
   }
 
   function sale(number) {
@@ -54,7 +58,7 @@ export default function Product() {
   }
 
   function salePrice(price) {
-    return ((price * 0.6).toFixed(2));
+    return (price * 0.6).toFixed(2);
   }
 
   function colorChange(colorClass) {
@@ -63,15 +67,28 @@ export default function Product() {
 
   function outOfStock() {
     setAddToCart('inactive-btn');
-    setButtonActive(false)
+    setButtonActive(false);
   }
 
   function inStock() {
     setAddToCart('add-to-cart');
     setButtonActive(true);
-    setImageClass('out-of-stock-pic');
+    setImageClass('');
   }
 
+  function handleSizeClick(size) {
+    setActiveSize(size);
+    if (size === 'XL') {
+      outOfStock();
+    } else {
+      inStock();
+    }
+  }
+
+  function handleColorClick(colorClass) {
+    setActiveColor(colorClass);
+    colorChange(colorClass);
+  }
 
   return (
     <div className='container'>
@@ -85,9 +102,8 @@ export default function Product() {
           </div>
           <div className='product-information'>
             <h2>{product.title}</h2>
-            {generateSKU(product.id, product.title)}
             <div className='product-rating'>
-              <img src={star}></img>
+              <img src={star} alt="star" />
               <h2>{product.rating.rate}</h2>
               <h2>({product.rating.count} ratings)</h2>
             </div>
@@ -95,38 +111,37 @@ export default function Product() {
               {sale(product.id) ? <h2 className='not-on-sale'>${product.price}</h2> :
                 <div className='sale'>
                   <h2><span className='strike-through sale-small-text'>${product.price}</span></h2>
-                  <h2><span className='red-text sale-price'>${salePrice((product.price))}</span></h2>
+                  <h2><span className='red-text sale-price'>${salePrice(product.price)}</span></h2>
                   <h2><span className='red-text save sale-small-text'>Save ${Math.floor(product.price - salePrice(product.price))}</span></h2>
                 </div>
               }
             </div>
             <div className='size-chart'>
-              <h2>Size chart</h2>
-              <button className='size-chart-btn'></button>
+              <h2>Size</h2>
+              {/* <p>-size chart</p> */}
             </div>
             <div className='sizes'>
-              <div onClick={() => inStock()}>XS</div>
-              <div onClick={() => inStock()}>S</div>
-              <div onClick={() => inStock()}>M</div>
-              <div onClick={() => inStock()}>L</div>
-              <div onClick={() => outOfStock()}>XL</div>
+              {['XS', 'S', 'M', 'L', 'XL'].map(size => (
+                <div
+                  key={size}
+                  onClick={() => handleSizeClick(size)}
+                  className={activeSize === size ? 'size-button-active' : 'size-button-inactive'}
+                >
+                  {size}
+                </div>
+              ))}
             </div>
-            <h2 className='product-colors-title'>COLOR</h2>
-            <div className='product-colors'>
-              <div>
-                <button className='product-white' onClick={() => colorChange('white-image')}></button>
-              </div>
-              <div>
-                <button className='product-black' onClick={() => colorChange('black-image')}></button>
-              </div>
-              <div>
-                <button className='product-pink' onClick={() => colorChange('pink-image')}></button>
-              </div>
-              <div>
-                <button className='product-green' onClick={() => colorChange('green-image')}></button>
-              </div>
-              <div>
-                <button className='product-blue' onClick={() => colorChange('blue-image')}></button>
+            <div>
+              <h2 className='product-colors-title'>COLOR</h2>
+              <div className='product-colors'>
+                {['white-image', 'black-image', 'pink-image', 'green-image', 'blue-image'].map(color => (
+                  <div className='color-btn-bg'><button
+                    key={color}
+                    className={`color-btn-${color} ${activeColor === color ? 'color-btn-active' : 'color-btn-inactive'}`}
+                    onClick={() => handleColorClick(color)}
+                  >
+                  </button></div>
+                ))}
               </div>
             </div>
             <div className='quantity'>
@@ -144,6 +159,14 @@ export default function Product() {
           </div>
         </div>
       )}
+      <div className="you-may-also-like flex gap-20">
+        <h3>You May Also Like</h3>
+        <div className="grid-container">
+          {filteredProducts.map(product => (
+            <ProductItem key={product.id} product={product} />
+          ))}  
+        </div>
+      </div>
     </div>
   );
 }
