@@ -40,9 +40,9 @@
   --black-hover: #666666;
   --pinkish-red: #e23152;
   --pink-hover: #e85d78;
-  --bg-gray: #f6f6f6;
   --dark-gray: #7c7c7c;
   --background-main: #f6f6f6;
+  --vertical-section-spacings: 50px;
 }
 
 .container {
@@ -641,15 +641,15 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .footer-divider {
-  border-top: solid 1px rgb(208, 215, 222, 0.5);
+  border-top: solid 1px var(--dark-gray);
   height: 1px;
   width: 100%;
   margin-top: 30px;
 }
 
-.footer {
+.footer-container {
   height: 450px;
-  margin-top: 30px;
+  padding: var(--vertical-section-spacings) 0;
 }
 
 .footer-box {
@@ -657,9 +657,9 @@ body {
   justify-content: space-between;
 
   h2 {
-    font-size: 23px;
+    font-size: 20px;
+    letter-spacing: 2px;
     font-weight: 500;
-    /* letter-spacing: 2px; */
   }
 
   ul {
@@ -672,13 +672,14 @@ body {
     font-size: 19px;
     font-weight: 400;
     cursor: pointer;
+    font-size: 15px;
   }
 
-  input[type=text] {
+  /* input[type=text] {
     margin-top: 25px;
     border: none;
-    border-bottom: 3px solid var(--black);
-    font-size: 18px;
+    border-bottom: 2px solid var(--black);
+    font-size: 15px;
     background: #f6f8fa url(../media/email.png) no-repeat 20px 9px;
     background-position: right;
     background-size: contain;
@@ -688,9 +689,32 @@ body {
     &:focus{
       outline: none;
     }
-  }
+  } */
 }
 
+.footer-input-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--black);
+  margin-top: 25px;
+  input[type=text] {
+    flex-grow: 1;
+    border: none;
+    font-size: 15px;
+    background-color: var(--background-main);
+  }
+  input[type=text]:focus {
+    outline: none;
+  }
+  button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
 
 .footer-language-select, .footer-copywrite {
   display: flex;
@@ -713,13 +737,6 @@ body {
     font-weight: 400;
     font-size: 17px;
   }
-}
-
-.footer-payment-options {
-  margin-top: 20px;
-  display: flex;
-  img {height: 30px};
-  gap: 8px;
 }
 
 
