@@ -27,7 +27,7 @@ export default function Cart() {
         filteredData.shift();
         const updatedQuantityList = filteredData.map(product => {
           initializeProductQuantity(product);
-		      updateProductTotalPrice(product);
+          updateProductTotalPrice(product);
           return product;
 	      }
         );
