@@ -664,7 +664,11 @@ body {
   margin-top: 15px;
 }
 
-
+.you-may-also-like {
+  h3 {
+    font-size: 32px;
+  }
+}
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */

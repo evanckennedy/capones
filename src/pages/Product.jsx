@@ -157,14 +157,15 @@ export default function Product() {
           </div>
         </div>
       )}
-
-      <h3>You May Also Like</h3>
-      <div className="grid-container">
-        {filteredProducts.map(product => (
-          <ProductItem key={product.id} product={product} />
-        ))}  
+      <div className="you-may-also-like">
+        <h3>You May Also Like</h3>
+        <div className="grid-container">
+          {filteredProducts.map(product => (
+            <ProductItem key={product.id} product={product} />
+          ))}  
+        </div>
       </div>
-
+      
     </div>
   );
 }
