@@ -9,7 +9,11 @@ import NotFound from './pages/NotFound';
 
 function App() {
   const location = useLocation();
-  const isNotFound = !['/', '/product/:slug', '/cart'].includes(location.pathname);
+  const isNotFound = !(
+    location.pathname === '/' ||
+    location.pathname.startsWith('/product') ||
+    location.pathname === '/cart'
+  );
 
   return (
     <>
