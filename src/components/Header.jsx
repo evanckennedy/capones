@@ -100,8 +100,9 @@ export default function Header() {
                   <p>PASSWORD</p>
                   <p className='pointer-text'>Forgot password?</p>
                 </div>
-                <input type='text'></input>
+                <input type='password'></input>
                 <button className='modal-signin-btn'>SIGN IN</button>
+                <p className='error message'>Invalid Username or Password</p>
                 <p className='pointer-text'>Create account</p>
               </div></>)}
             <button className='cart-btn' onClick={() => redirect('cart')} ></button>
