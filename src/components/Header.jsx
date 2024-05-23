@@ -90,7 +90,7 @@ export default function Header() {
             
           </div>
           <h1 className='header-title' onClick={() => redirect('')}>CAPONES</h1>
-          <div className='header-buttons'>
+          <div className='header-buttons cart-login-box'>
             {/* <button className='signin-btn'></button> */}
             {!modalOpen && <button onClick={openModal} className='open-modal'></button>}
               {modalOpen && (

@@ -13,10 +13,12 @@ function HeroBanner() {
   
 
   return (
-    <div className="hero-banner">
-      <h2 className="hero-banner-text">PRE-FALL 2024</h2>
-      <button onClick={() => redirect('')}>Shop now</button>
+    <div className=' container'>
+      <div className="hero-banner">
+        <h2 className="hero-banner-text">PRE-FALL 2024</h2>
+        <button onClick={() => redirect('')}>Shop now</button>
 
+      </div>
     </div>
   )
 }
