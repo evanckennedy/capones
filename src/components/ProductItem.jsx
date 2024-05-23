@@ -5,7 +5,7 @@ function ProductItem({ product }) {
     <Link to={`/product/${product.id}`}>
       <div className="grid-item flex">
         <figure>
-          <img src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} className='gallery-image' />
         </figure>
         <div className="grid-product-info flex">
           <p>{product.title}</p>
