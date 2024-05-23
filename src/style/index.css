@@ -966,9 +966,8 @@ body {
 
 .cart-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
+
   margin-top: 20px;
   margin-bottom: 20px;
   gap: 20px;
@@ -976,14 +975,15 @@ body {
 
 .cart-sections {
   display: flex;
-  justify-content: center;
   gap: 25px;
 }
 
-.cart-title {
+
+.cart-shopping-bag {
   font-size: 47px;
   font-weight: 700;
   align-self: center;
+  text-align: center;
 }
 
 .cart-subtitle {
@@ -1000,36 +1000,41 @@ body {
   margin-bottom: 30px;
 }
 
-.cart-items-table {
-  width: 100%;
-  border-collapse: collapse;
+.cart-picture-box {
+  min-width: 20%;
+  width: 20%;
 }
 
-.cart-items-table th, .cart-items-table td {
-  padding: 5px 10px;
-  font-size: 18px;
-  text-align: left;
-  vertical-align: top;
+.cart-info-box {
+  width: 25%;
 }
 
-.cart-items-table td {
-  width: 18%; /* Set a fixed width for each column */
+.cart-box {
+  width: 15%;
+  /* width: max-content; */
 }
 
-.cart-items-table td:first-child {
-  width: 30%; /* Adjust the width of the first column */
-}
-
-.narrow-row td {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
 
 .cart-item-img {
   width: 190px;
   height: 222px;
   padding: 23px 19px 23px 19px; 
   background-color: var(--white);
+}
+
+.cart-box-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cart-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cart-text {
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .quantity-select {
@@ -1041,20 +1046,20 @@ body {
   color: var(--pinkish-red)
 }
 
-span {
+.underline-edit {
   font-weight: 600;
   text-decoration: underline;
   font-size: 16px;
   cursor: pointer;
 }
 
-.fourth-row + .fifth-row td {
-  padding-top: 20px;
+.trash-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
-.first-row-header {
-  max-width: calc(2ch * 12); /* Limit the width to fit 12 characters */
-}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Checkout                                             */
@@ -1069,7 +1074,6 @@ span {
   flex-direction: column;
   gap: 12px;
 }
-
 
 .discounts {
   display: flex;
@@ -1115,7 +1119,7 @@ span {
   font-size: 16px;
 }
 
-.divide-line{
+.divide-line {
   background-color: var(--black);
   height: 2px;
   margin-top: 24px;
