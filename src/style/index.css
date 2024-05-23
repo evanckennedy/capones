@@ -408,9 +408,31 @@ body {
 
   img {
     padding: 50px;
-
+    display: block;
   }
 }
+
+.product-sold-out {
+
+}
+
+
+.sold-out-banner {
+  background-color: #666666;
+  color: var(--white);
+  position: absolute;
+  top: 55%;
+  width: 650px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.out-of-stock-pic {
+  filter: grayscale(100%);
+}
+
+
 
 .product-information {
 
@@ -822,6 +844,7 @@ body {
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
+  mix-blend-mode: multiply;
 
   figure {
     background-color: var(--white);
@@ -831,6 +854,12 @@ body {
     justify-content: center;
     align-items: center;
     transition: all ease 0.8s;
+    mix-blend-mode: multiply;
+
+    img {
+      mix-blend-mode: multiply;
+    }
+
   }
 }
 
@@ -909,9 +938,6 @@ figure:hover {
   /* transform: skewY(2deg); */
   /* transform: rotateY(20deg); */
   
-
-
-
 }
 
 
