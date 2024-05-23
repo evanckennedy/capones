@@ -274,10 +274,8 @@ body {
   position: fixed;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 40%;
-  width: 350px;
-  height: 400px;
-  background-color: #d9d9d9;
+  top: 50%;
+  background-color: var(--white);
   z-index: 100;
   border-radius: 5px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -295,6 +293,12 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+  }
+
+  .modal-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .modal-signin-btn {
@@ -318,10 +322,9 @@ body {
 
   .close-modal {
     position: relative;
-    top: 10%;
-    left: 90%;
-    background-color: #d9d9d9;
+    width: 17px;
     background-image: url("../media/close.png");
+    background-color: transparent;
   }
   .pointer-text {
     cursor: pointer;
@@ -336,7 +339,7 @@ body {
   width: 100%;
   height: 300%;
   z-index: 10;
-  background-color: rgb(217, 217, 217, 0.3);
+  background-color: rgba(31, 31, 31, 0.392);
   cursor: pointer;
 }
 
