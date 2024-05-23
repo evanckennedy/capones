@@ -218,7 +218,7 @@ body {
 }
 
 .cart-btn {
-  background-image: url("../media/icon-cart.png");
+  background-image: url("../media/icon-bag.png");
 }
 
 
@@ -457,6 +457,14 @@ body {
   }
 }
 
+.product-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
 .sold-out-banner {
   background-color: #666666;
   color: var(--white);
@@ -476,13 +484,13 @@ body {
 .product-rating {
   display: flex;
   gap: 5px;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 12px;
   align-items: center;
 
   img {
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
   }
 }
 
@@ -531,10 +539,19 @@ body {
   display: flex;
   gap: 20px;
   height: 50px;
-  margin-top: 15px;
+
+  align-items: center;
+
+  p {
+    color: #666666;
+    cursor: pointer;
+  }
+
 }
 
-.size-chart-btn {
+
+
+/* .size-chart-btn {
   background-image: url("../media/measuring-tape.png");
   background-position: center;
   background-size: contain;
@@ -546,7 +563,7 @@ body {
   cursor: pointer;
   line-height: 50px;
   margin-top: 10px;
-}
+} */
 
 .sizes {
   display: flex;
@@ -556,7 +573,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -569,6 +586,18 @@ body {
   }
 }
 
+.size-button-active {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.size-button-inactive {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+
+
 .product-colors-title {
   margin-top: 15px;
 }
@@ -577,35 +606,64 @@ body {
   display: flex;
   gap: 20px;
 
+  button {
 
-
-  div {
-    height: 50px;
-    width: 50px;
-    background-color: var(--white);
-    border: 2px solid black;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 
-
-
     &:hover {
       border: 3px solid black;
     }
   }
 
-  button {
-    height: 35px;
-    width: 35px;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
 
 }
+
+.color-btn-bg {
+  height: 44px;
+  width: 44px;
+  background-color: rgb(255, 255, 255);
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-btn-black-image {
+  background-color: var(--black);
+}
+
+.color-btn-white-image {
+  background-color: var(--white);
+}
+
+.color-btn-pink-image {
+  background-color: var(--pinkish-red);
+}
+
+.color-btn-green-image {
+  background-color: rgb(48, 224, 48);
+}
+
+.color-btn-blue-image {
+  background-color: rgb(64, 64, 209);
+}
+
+.color-btn-active {
+  height: 44px;
+  width: 44px;
+}
+
+.color-btn-inactive {
+  height: 35px;
+  width: 35px;
+}
+
+
 
 .product-black {
   background-color: var(--black);
@@ -861,10 +919,14 @@ body {
 
   select {
     background-color: var(--white);
-    border: none;
+
+    border: 0px;
+    outline: 0px;
+  
+  
     height: 40px;
     padding: 0 35px 0 20px;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
@@ -986,6 +1048,9 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Gallery Animations                                   */
