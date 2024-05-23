@@ -1,32 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import star from '../media/icon-star.png';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function Product() {
   const [product, setProduct] = useState(null);
   const [imageClass, setImageClass] = useState('');
   const [addToCart, setAddToCart] = useState('add-to-cart');
   let { slug } = useParams();
+  const navigate = useNavigate();
 
-  const URL ='https://fakestoreapi.com/products';
+  const URL = 'https://fakestoreapi.com/products';
 
   useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const response = await axios.get(URL);
-        const data = response.data;
-        /* const product = fliterClothing(data); */
-        const productFound = data.find(product => product.id == slug);
-        /* console.log(productFound); */
-        setProduct(productFound);
-      } catch (error) {
-        console.error('Error, product not found', error);
-      }
-    };
+    if (isNaN(slug)) {
+      navigate('*');
+    } else {
+      const getProduct = async () => {
+        try {
+          const response = await axios.get(URL);
+          const data = response.data;
+          /* const product = fliterClothing(data); */
+          const productFound = data.find(product => product.id == slug);
+          /* console.log(productFound); */
+          setProduct(productFound);
+        } catch (error) {
+          console.error('Error, product not found', error);
+        }
+      };
 
-    getProduct();
-  }, []);
+      getProduct();
+    }
+  }, [slug, navigate]);
 
   /* function fliterClothing(products) {
     return products.filter(product =>
