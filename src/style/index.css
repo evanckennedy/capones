@@ -171,8 +171,8 @@ body {
 /* Search, Cart and Login */
 .header-buttons {
   width: 100px;
-  gap: 20px;
   align-content: center;
+
   button {
     background-position: center;
     background-size: contain;
@@ -185,6 +185,18 @@ body {
   }
 }
 
+.search-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-login-box {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+
+}
 
 .search-btn{
   background-image: url("../media/icon-search.png");
