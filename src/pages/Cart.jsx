@@ -12,9 +12,9 @@ export default function Cart() {
   const [cartProducts, setCartProducts] = useState([]);
   const [cartsTotalPrice, setCartTotalPrice] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const numberOfCartItems = 4;
 
   const URL ='https://fakestoreapi.com/products';
+
 
   useEffect(() => {
     async function getCartProducts() {
@@ -27,8 +27,14 @@ export default function Cart() {
         )
         filteredData.pop();
         filteredData.shift();
-        setCartProducts(filteredData);
-        updateCartTotal(filteredData);
+        const updatedQuantityList = filteredData.map(product => {
+          initializeProductQuantity(product);
+		      updateProductTotalPrice(product);
+          return product;
+	      }
+        );
+        setCartProducts(updatedQuantityList);
+        updateCartTotal(updatedQuantityList);
         setIsLoading(false);
       } catch (error) {
         console.error(error)
@@ -37,6 +43,14 @@ export default function Cart() {
 
     getCartProducts();
   }, []);
+
+  const updateProductTotalPrice = (product) => {
+    product.totalPrice = product.quantity * product.price;
+  }
+
+  const initializeProductQuantity = (product) => {
+    product.quantity = 1;
+  }
 
   const updateCartTotal = (cartItemsList) => {
     const totalCost = cartItemsList.reduce((sum, product) =>
@@ -47,7 +61,8 @@ export default function Cart() {
   const handleQuantityChange = (productId, newQuantity) => {
     const updatedCartProducts = cartProducts.map(product => {
       if (product.id === productId) {
-        product.updateQuantity(newQuantity);
+        product.quantity = newQuantity;
+        updateProductTotalPrice(product)
       }
       return product;
     });
@@ -96,8 +111,8 @@ export default function Cart() {
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option value="3">4</option>
-                      <option value="3">5</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
                     </select>
                   </div>
                   <div className="cart-total cart-box">
@@ -155,6 +170,7 @@ export default function Cart() {
      </div>
   )
 }
+
 
 
 
