@@ -15,13 +15,11 @@ export default function Cart() {
 
   const URL ='https://fakestoreapi.com/products';
 
-
   useEffect(() => {
     async function getCartProducts() {
       try {
         const response = await axios.get(URL);
         const data = response.data;
-
         const filteredData = data.filter(product => 
           product.category === "men's clothing" || product.category === "women's clothing"
         )
