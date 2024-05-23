@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import star from '../media/icon-star.png';
 import { useParams, useNavigate } from 'react-router-dom';
+import ProductItem from '../components/ProductItem';
 
 export default function Product() {
   const [product, setProduct] = useState(null);
   const [imageClass, setImageClass] = useState('');
   const [addToCart, setAddToCart] = useState('add-to-cart');
   const [buttonActive, setButtonActive] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   let { slug } = useParams();
   const navigate = useNavigate();
@@ -26,6 +28,17 @@ export default function Product() {
           const productFound = data.find(product => product.id == slug);
           /* console.log(productFound); */
           setProduct(productFound);
+
+
+          const filteredData = data.filter(product => 
+            product.category === "men's clothing" || product.category === "women's clothing"
+          )
+          const removeChosenProuct = filteredData.filter(product => product.id != slug);
+          const fourProducts = removeChosenProuct.slice(1, 5);
+          /* console.log(filteredData);
+          console.log(removeChosenProuct);
+          console.log(fourProducts); */
+          setFilteredProducts(fourProducts);
         } catch (error) {
           console.error('Error, product not found', error);
         }
@@ -144,6 +157,15 @@ export default function Product() {
           </div>
         </div>
       )}
+      <div className="you-may-also-like flex gap-20">
+        <h3>You May Also Like</h3>
+        <div className="grid-container">
+          {filteredProducts.map(product => (
+            <ProductItem key={product.id} product={product} />
+          ))}  
+        </div>
+      </div>
+      
     </div>
   );
 }
