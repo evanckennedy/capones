@@ -11,6 +11,7 @@ export default function Cart() {
 
   const [cartProducts, setCartProducts] = useState([]);
   const [cartsTotalPrice, setCartTotalPrice] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const numberOfCartItems = 4;
 
   const URL ='https://fakestoreapi.com/products';
@@ -31,6 +32,7 @@ export default function Cart() {
         console.log(
           filteredCartItems
         );
+        setIsLoading(false);
       } catch (error) {
         console.error(error)
       }
@@ -68,7 +70,7 @@ export default function Cart() {
       <h1 className="cart-title">Shopping Bag</h1>
       <h2 className="cart-subtitle">{cartProducts.length} items</h2>
       <div className="cart-sections">
-      <div className="cart-checkout-section">
+      <div className={`cart-checkout-section ${isLoading ? 'shimmer' : ''}`}>
         {
           cartProducts.map( (product) => 
             <div className="cart-item">
