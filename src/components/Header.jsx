@@ -51,10 +51,8 @@ export default function Header() {
   function validateForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(email)) {
-      setErrorMessage('Invalid email')
-    } else if (password === '') {
-      setErrorMessage('Password cannot be empty')
+    if (!emailRegex.test(email) || password === '') {
+      setErrorMessage('Invalid email or password')
     } else {
       setErrorMessage('');
     }
@@ -109,13 +107,14 @@ export default function Header() {
                 <input type='text' value={email} onChange={e => setEmail(e.target.value)}></input>
                 <div className='modal-password-section'>
                   <p>PASSWORD</p>
-                  <p className='pointer-text'>Forgot password?</p>
                 </div>
                 <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
+                <p className='pointer-text'>Forgot password?</p>
                 <button className='modal-signin-btn' onClick={validateForm}>SIGN IN</button>
                 <p className='error message'>{errorMessage}</p>
                 <p className='pointer-text'>Create account</p>
-              </div></>)}
+              </div>
+              </>)}
             <button className='cart-btn' onClick={() => redirect('cart')} ></button>
           </div>
 

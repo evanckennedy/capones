@@ -270,12 +270,12 @@ body {
 
 .modal {
   z-index: 9999;
-  padding: 20px 50px;
+  padding: 25px;
   position: fixed;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 40%;
-  width: 500px;
+  width: 350px;
   height: 400px;
   background-color: #d9d9d9;
   z-index: 100;
@@ -310,6 +310,10 @@ body {
   }
 
     
+  }
+
+  .pointer-text {
+    text-align: right;
   }
 
   .close-modal {
