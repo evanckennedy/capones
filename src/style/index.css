@@ -820,7 +820,6 @@ body {
 
 .cart-subtitle {
   align-self: flex-start;
-  margin-left: calc(56% - 50vw);
   font-size: 36px;
   font-weight: 700;
 }
@@ -845,17 +844,12 @@ body {
   vertical-align: top;
 }
 
-
-.cart-items-table th {
-  width: 25%; /* Set a fixed width for each column */
-}
-
 .cart-items-table td {
-  width: 15%; /* Set a fixed width for each column */
+  width: 18%; /* Set a fixed width for each column */
 }
 
 .cart-items-table td:first-child {
-  width: 40%; /* Adjust the width of the first column */
+  width: 30%; /* Adjust the width of the first column */
 }
 
 .cart-item-img {
@@ -865,7 +859,7 @@ body {
 }
 
 .quantity-select {
-  padding: 3px 10px;
+  padding: 3px 18px;
   width: auto;
 }
 

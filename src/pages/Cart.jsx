@@ -1,5 +1,4 @@
 import { FaRegTrashCan } from "react-icons/fa6";
-import clothSample from "../media/clothSample.webp";
 import CartProduct from "../utils/CartProduct";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -46,6 +45,7 @@ export default function Cart() {
   
 
   return (
+    <div className="container">
     <div className="cart-container">
       <h1 className="cart-title">Shopping Bag</h1>
       <h2 className="cart-subtitle">{numberOfCartItems} items</h2>
@@ -98,7 +98,7 @@ export default function Cart() {
       </div>
       
     </div>
-    
+    </div>
   )
 }
 
