@@ -272,15 +272,14 @@ body {
 
 .modal {
   z-index: 9999;
-  padding: 25px;
+  padding: 25px 30px;
   position: fixed;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   background-color: var(--white);
   z-index: 100;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
   input[type=text],
   input[type=password] {
@@ -343,6 +342,24 @@ body {
 
   .pointer-text {
     cursor: pointer;
+  }
+  .error-message {
+    height: 24px;
+    text-align: center;
+    color: rgb(223, 4, 4);
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  .sign-up-message {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+    cursor: default;
+    span {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--pinkish-red);
+    }
   }
 }
 
@@ -440,9 +457,6 @@ body {
   }
 }
 
-.product-sold-out {}
-
-
 .sold-out-banner {
   background-color: #666666;
   color: var(--white);
@@ -457,10 +471,6 @@ body {
 .out-of-stock-pic {
   filter: grayscale(100%);
 }
-
-
-
-.product-information {}
 
 
 .product-rating {

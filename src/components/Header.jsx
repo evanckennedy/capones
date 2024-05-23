@@ -113,8 +113,10 @@ export default function Header() {
                   <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                   <p className='pointer-text'>Forgot password?</p>
                   <button className='modal-signin-btn' onClick={validateForm}>Sign In</button>
-                  <p className='error message'>{errorMessage}</p>
-                  <p className='pointer-text'>Create account</p>
+                  <p className='error-message'>{errorMessage}</p>
+                  <p className='pointer-text sign-up-message'>
+                    Don't have an account? <span>Sign Up</span>
+                  </p>
                 </div>
               </>)}
             <button className='cart-btn' onClick={() => redirect('cart')} ></button>
