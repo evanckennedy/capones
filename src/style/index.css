@@ -282,7 +282,7 @@ body {
   border-radius: 5px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-  input[type=text] {
+  input[type=text], input[type=password] {
     width: 100%;
     padding-left: 10px;
     height: 34px;

@@ -1,7 +1,3 @@
-
-
-
-
 import { useState, useEffect } from 'react';
 import searchIcon from "../media/icon-search.png";
 import cartIcon from "../media/icon-cart.png";
@@ -15,17 +11,17 @@ export default function Header() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const [modalOpen, setModal] = useState(false);
   const [searchOpen, setSearch] = useState(false);
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const navigate = useNavigate();
 
   function redirect(location) {
       navigate(`/${location}`);
   };
-
 
   function closeModal() {
     setModal(false);
@@ -43,8 +39,6 @@ export default function Header() {
     setSearch(true);
   };
 
-
-
   const adScroll = () => {
     setCurrentIndex((prevIndex) => (prevIndex === ads.length - 1 ? 0 : prevIndex + 1));
   };
@@ -53,6 +47,18 @@ export default function Header() {
       const interval = setInterval(adScroll, 5000);
       return () => clearInterval(interval);
     }, []);
+
+  function validateForm() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      setErrorMessage('Invalid email')
+    } else if (password === '') {
+      setErrorMessage('Password cannot be empty')
+    } else {
+      setErrorMessage('');
+    }
+  }
 
   return (
     <>
@@ -100,13 +106,14 @@ export default function Header() {
                 <button onClick={closeModal} className='close-modal'></button>
                 <h2>Login</h2>
                 <p>EMAIL</p>
-                <input type='text'></input>
+                <input type='text' value={email} onChange={e => setEmail(e.target.value)}></input>
                 <div className='modal-password-section'>
                   <p>PASSWORD</p>
                   <p className='pointer-text'>Forgot password?</p>
                 </div>
-                <input type='text'></input>
-                <button className='modal-signin-btn'>SIGN IN</button>
+                <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
+                <button className='modal-signin-btn' onClick={validateForm}>SIGN IN</button>
+                <p className='error message'>{errorMessage}</p>
                 <p className='pointer-text'>Create account</p>
               </div></>)}
             <button className='cart-btn' onClick={() => redirect('cart')} ></button>
