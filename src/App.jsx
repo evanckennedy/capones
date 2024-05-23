@@ -9,9 +9,11 @@ import NotFound from './pages/NotFound';
 
 function App() {
   const location = useLocation();
+
+  const isProductPath = /^\/product\/\d+$/.test(location.pathname);
   const isNotFound = !(
     location.pathname === '/' ||
-    location.pathname.startsWith('/product') ||
+    isProductPath ||
     location.pathname === '/cart'
   );
 
