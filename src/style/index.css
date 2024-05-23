@@ -788,6 +788,8 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #product-gallery-section {
   flex-direction: column;
+  margin-top: var(--vertical-section-spacings);
+  margin-bottom: var(--vertical-section-spacings);
 }
 
 .product-toolbar, .grid-container {
@@ -911,11 +913,11 @@ body {
 
 .view-more-btn {
   font-weight: 600;
-  font-size: 25px;
+  font-size: 22px;
   padding: 13px 19px;
   background-color: var(--black);
   color: var(--white);
-  width: 180px;
+  width: 160px;
   height: 60px;
   align-content: center;
   border: none;
