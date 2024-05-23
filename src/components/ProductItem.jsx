@@ -9,8 +9,8 @@ function ProductItem({ product }) {
         </figure>
         <div className="grid-product-info flex">
           <p>{product.title}</p>
-          <p>{product.category}</p>
-          <p>$ {product.price.toFixed(2)}</p>
+          <p>{product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
+          <p>${product.price.toFixed(2)}</p>
         </div>
       </div>
     </Link>
