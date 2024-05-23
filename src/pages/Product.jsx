@@ -75,7 +75,7 @@ export default function Product() {
 
   return (
     <div className='container'>
-      {product ? (
+      {product && (
         <div className='products'>
           <div className='product-image'>
             <div className='product-image-box'>
@@ -143,8 +143,6 @@ export default function Product() {
             <p className='product-description'>{product.description}</p>
           </div>
         </div>
-      ) : (
-        <div>Product not found</div>
       )}
     </div>
   );
