@@ -45,6 +45,10 @@
   --vertical-section-spacings: 50px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   width: min(100% - 30px, 1080px);
   margin-inline: auto;
@@ -355,6 +359,11 @@ body {
     font-size: 66px;
     font-weight: 700;
     color: var(--white);
+  }
+
+  a, a:visited {
+    color: inherit;
+    text-decoration: none; 
   }
 
   button {
