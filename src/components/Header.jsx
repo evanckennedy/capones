@@ -12,7 +12,6 @@ export default function Header() {
   const ads = [
     { index: 1, description: "50% OFF MEN'S PULLOVERS" },
     { index: 2, description: "FREE LOCAL SHIPPING" },
-    { index: 3, description: "Something Else Here" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
