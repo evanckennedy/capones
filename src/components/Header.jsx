@@ -51,10 +51,8 @@ export default function Header() {
   function validateForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(email)) {
-      setErrorMessage('Invalid email')
-    } else if (password === '') {
-      setErrorMessage('Password cannot be empty')
+    if (!emailRegex.test(email) || password === '') {
+      setErrorMessage('Invalid email or password')
     } else {
       setErrorMessage('');
     }
