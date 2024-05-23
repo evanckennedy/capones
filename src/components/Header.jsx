@@ -1,7 +1,3 @@
-
-
-
-
 import { useState, useEffect } from 'react';
 import searchIcon from "../media/icon-search.png";
 import cartIcon from "../media/icon-cart.png";
@@ -15,7 +11,6 @@ export default function Header() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const [modalOpen, setModal] = useState(false);
   const [searchOpen, setSearch] = useState(false);
 
