@@ -7,12 +7,14 @@ export default function Product() {
   const [imageClass, setImageClass] = useState('');
   const [addToCart, setAddToCart] = useState('add-to-cart');
 
+  const URL ='https://fakestoreapi.com/products';
+
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const response = await axios.get('https://fakestoreapi.com/products');
-        const productUnfiltered = response.data;
-        const product = fliterClothing(productUnfiltered);
+        const response = await axios.get(URL);
+        const data = response.data;
+        const product = fliterClothing(data);
 
         setProduct(product[0]);
 
