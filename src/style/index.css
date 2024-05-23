@@ -849,7 +849,7 @@ body {
   figure {
     background-color: var(--white);
     padding: 25px;
-    height: 360px;
+    height: 310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -866,6 +866,7 @@ body {
 .grid-product-info {
   flex-direction: column;
   gap: 5px;
+  margin-top: 10px;
 
   p {
     line-height: 1.2;
@@ -891,12 +892,12 @@ body {
   }
 
   p:nth-of-type(2) {
-    font-weight: 500;
+    font-weight: 400;
     color: var(--dark-gray);
   }
 
   p:last-of-type {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 24px;
   }
 }
@@ -917,27 +918,14 @@ body {
 /*  Gallery Animations                                   */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-figure:hover {
-  /* padding: 23px; */
-
-  transition: all ease 0.8s;
-
-    &:hover {
-      box-shadow: inset 500px 0 0 0 rgb(102, 102, 102, 0.5);
-    }
-}
-
 .gallery-image {
-  transition: all ease 0.8s;
-
+  transition: all ease 0.3s;
+  width: 200px;
+  height: 250px;
+  object-fit: contain;
 }
 .gallery-image:hover{
     transform: scale(1.02, 1.02);
-  /* transform: rotate(2deg); */
-  /* transform: skewX(2deg); */
-  /* transform: skewY(2deg); */
-  /* transform: rotateY(20deg); */
-  
 }
 
 
