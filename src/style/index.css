@@ -787,6 +787,10 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Product Gallery                                      */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#product-gallery-section {
+  flex-direction: column;
+}
+
 .product-toolbar, .grid-container {
   font-family: "Inter", sans-serif;
 }
@@ -900,6 +904,10 @@ body {
     font-weight: 500;
     font-size: 24px;
   }
+}
+
+.view-more-btn-wrapper {
+  width: 100%;
 }
 
 .view-more-btn {

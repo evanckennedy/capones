@@ -55,24 +55,29 @@ function ProductGallery() {
 
   return (
     <>
-      <div className="product-toolbar flex justify-between">
-        <h3>New Collection</h3>
-        <div className="custom-select">
-          <select className="sort-button" defaultValue="Sort: Best Match" onChange={(e) => setSortOption(e.target.value)}>
-            <option>Sort: Best Match</option>
-            <option>Sort: Lowest Price</option>
-            <option>Sort: Highest Price</option>
-            <option>Sort: Most Rated</option>
-            <option>Sort: Highest Rated</option>
-          </select>
+      <section id='product-gallery-section' className='flex gap-20'>
+        <div className="product-toolbar flex justify-between">
+          <h3>New Collection</h3>
+          <div className="custom-select">
+            <select className="sort-button" defaultValue="Sort: Best Match" onChange={(e) => setSortOption(e.target.value)}>
+              <option>Sort: Best Match</option>
+              <option>Sort: Lowest Price</option>
+              <option>Sort: Highest Price</option>
+              <option>Sort: Most Rated</option>
+              <option>Sort: Highest Rated</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div className="grid-container">
-        {products.map(product => (
-          <ProductItem key={product.id} product={product} />
-        ))}  
-      </div>
-      <button className='view-more-btn'>View More</button>
+        <div className="grid-container">
+          {products.map(product => (
+            <ProductItem key={product.id} product={product} />
+          ))}  
+        </div>
+        <div className="view-more-btn-wrapper center">
+          <button className='view-more-btn'>View More</button>
+        </div>   
+      </section>
+      
     </>
     
   )
