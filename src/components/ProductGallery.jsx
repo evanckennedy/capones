@@ -72,6 +72,7 @@ function ProductGallery() {
           <ProductItem key={product.id} product={product} />
         ))}  
       </div>
+      <button className='view-more-btn'>View More</button>
     </>
     
   )
