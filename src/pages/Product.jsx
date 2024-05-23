@@ -7,6 +7,8 @@ export default function Product() {
   const [product, setProduct] = useState(null);
   const [imageClass, setImageClass] = useState('');
   const [addToCart, setAddToCart] = useState('add-to-cart');
+  const [buttonActive, setButtonActive] = useState(true);
+
   let { slug } = useParams();
   const navigate = useNavigate();
 
@@ -61,11 +63,15 @@ export default function Product() {
 
   function outOfStock() {
     setAddToCart('inactive-btn');
+    setButtonActive(false)
   }
 
   function inStock() {
     setAddToCart('add-to-cart');
+    setButtonActive(true);
+    setImageClass('out-of-stock-pic');
   }
+
 
   return (
     <div className='container'>
@@ -74,6 +80,7 @@ export default function Product() {
           <div className='product-image'>
             <div className='product-image-box'>
               <img src={product.image} alt="" className={imageClass} />
+              {!buttonActive ? <h2 className='sold-out-banner'>SOLD OUT</h2> : ""}
             </div>
           </div>
           <div className='product-information'>
