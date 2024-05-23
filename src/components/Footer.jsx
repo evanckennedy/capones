@@ -15,11 +15,11 @@ import pay8 from "../media/visa.png";
 
 
 export default function Footer() {
-  
+
   return (
     <>
       <div className='footer-divider'></div>
-      <div className='footer container'>
+      <div className='footer-container container'>
         <div className='footer-box'>
           <div className='footer-customer-support'>
             <h2>CUSTOMER SUPPORT</h2>
@@ -40,19 +40,12 @@ export default function Footer() {
             </ul>
 
           </div>
-          {/* <div className='footer-company-info'>
-            <h2>COMPANY INFO</h2>
-            <ul>
-              <li>Store Locator</li>
-              <li>Careers</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
-              <li>Accessibility</li>
-            </ul>
-          </div> */}
           <div className='footer-signup-emails'>
             <h2>SIGN UP FOR EMAILS & GET 10% OFF!</h2>
-            <input type='text' placeholder='Enter your email'></input>
+            <div className='footer-input-section'>
+              <input type='text' placeholder='Enter your email' />
+              <button type='button'>Subscribe</button>
+            </div>
           </div>
         </div>
         <div className='footer-language-select'>
@@ -61,17 +54,6 @@ export default function Footer() {
             <option>French</option>
             <option>Swahili</option>
           </select>
-        </div>
-        <div className='footer-payment-options'>
-          {/* <img src={paymentImage}></img> */}
-          <img src={pay1}></img>
-          <img src={pay2}></img>
-          <img src={pay3}></img>
-          <img src={pay4}></img>
-          <img src={pay5}></img>
-          <img src={pay6}></img>
-          <img src={pay7}></img>
-          <img src={pay8}></img>
         </div>
         <div className='footer-copywrite'>
           <p>&copy; CAPONES All rights reserved</p>

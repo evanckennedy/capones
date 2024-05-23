@@ -9,14 +9,18 @@ import NotFound from './pages/NotFound';
 
 function App() {
   const location = useLocation();
-  const isNotFound = !['/', '/product', '/cart'].includes(location.pathname);
+  const isNotFound = !(
+    location.pathname === '/' ||
+    location.pathname.startsWith('/product') ||
+    location.pathname === '/cart'
+  );
 
   return (
     <>
       {!isNotFound && <Header />}
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route exact path='/product' element={<Product />} />
+        <Route exact path='/product/:slug' element={<Product />} />
         <Route exact path='/cart' element={<Cart />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
