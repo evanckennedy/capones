@@ -399,7 +399,8 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .products {
-  margin-top: 50px;
+  margin-top: var(--vertical-section-spacings);
+  margin-bottom: var(--vertical-section-spacings);
   display: flex;
   gap: 30px;
 }
@@ -665,6 +666,9 @@ body {
 }
 
 .you-may-also-like {
+  flex-direction: column;
+  margin-bottom: var(--vertical-section-spacings);
+
   h3 {
     font-size: 32px;
   }

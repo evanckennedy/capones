@@ -157,7 +157,7 @@ export default function Product() {
           </div>
         </div>
       )}
-      <div className="you-may-also-like">
+      <div className="you-may-also-like flex gap-20">
         <h3>You May Also Like</h3>
         <div className="grid-container">
           {filteredProducts.map(product => (
