@@ -1229,6 +1229,12 @@ body {
   justify-content: space-between;
   font-size: 16px;
   font-weight: 400;
+  p:first-of-type {
+    color: var(--dark-gray);
+  }
+  p {
+    color: var(--black);
+  }
 }
 
 .signin-btn {
@@ -1309,12 +1315,22 @@ body {
   width: 55px;
 }
 
+.checkout-bottom-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .checkout-bottom-text,
 .returnPolicy {
   text-decoration: none;
   color: var(--dark-gray);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 13px;
+}
+
+.checkout-bottom-first-text {
+  margin-top: 18px;
 }
 
 .underline {
