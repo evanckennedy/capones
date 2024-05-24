@@ -115,7 +115,7 @@ export default function Cart() {
                   </div>
                   <div className="cart-total cart-box">
                     <h2 className="cart-title">Total</h2>
-                    <h2 className='cart-total-price'>${product.totalPrice}</h2>
+                    <h2 className='cart-total-price'>${product.totalPrice.toFixed(2)}</h2>
                   </div>
                   <div className="cart-trash-box">
                     <FaRegTrashCan className='trash-icon' onClick={() => handleRemoveItem(product.id)}/>
