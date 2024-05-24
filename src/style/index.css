@@ -1117,6 +1117,10 @@ body {
   border-bottom: 1px solid var(--dark-gray);
 }
 
+.cart-item:last-child {
+  border-bottom: none;
+}
+
 .cart-picture-box {
   min-width: 25%;
   width: 30%;
