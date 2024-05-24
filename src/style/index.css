@@ -1091,16 +1091,16 @@ body {
 
 
 .cart-shopping-bag {
-  font-size: 47px;
+  font-size: 42px;
   font-weight: 700;
   align-self: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: var(--vertical-section-spacings);
 }
 
 .cart-subtitle {
   align-self: flex-start;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   margin-top: 20px;
 }
@@ -1131,7 +1131,9 @@ body {
 
 .cart-box {
   width: 15%;
-  /* width: max-content; */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 
