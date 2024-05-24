@@ -1164,6 +1164,8 @@ body {
 .quantity-select {
   padding: 3px 18px;
   width: auto;
+  background-color: inherit;
+  border: 1px solid var(--black);
 }
 
 .edit {
