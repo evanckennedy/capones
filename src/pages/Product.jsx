@@ -95,7 +95,7 @@ useEffect(() => {
               </div>
             </div>
             <div className='cost'>
-              ${product.price}
+              ${product.price.toFixed(2)}
             </div>
             <div className="size-wrapper">
               <div className='size-chart'>
