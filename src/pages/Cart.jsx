@@ -75,20 +75,24 @@ export default function Cart() {
   };
 
 
-  function randomSize(){
+  function randomSize(standard){
     const sizeSelection = ['XS','S',"M","L",'XL'];
-    return sizeSelection[(Math.floor(Math.random() * sizeSelection.length))];
+    let number = standard%(sizeSelection.length);
+    return sizeSelection[number]
 
   }
 
-  function randomColor(){
+  function randomColor(standard){
     const colorSelection = ['WHITE',"BLACK",'PINK'];
-    return colorSelection[(Math.floor(Math.random() * colorSelection.length))];
+    let number = standard%(colorSelection.length);
+    return colorSelection[number];
   }
 
-  function randomUPC(){
-    let number = Math.floor((Math.random()*1000000000));
-    return (number);
+  function randomUPC(standard){
+    // let letters = title.slice(0, 4).toUpperCase().trim();
+    // let number1 = (number * 547).toString().slice(0, 3);
+    let number = ((standard*23534574)*(standard*43634906)).toString().slice(0, 8);
+    return (number)
   }
 
 
@@ -108,8 +112,8 @@ export default function Cart() {
                   </div>
                   <div className="cart-info-box">
                     <h2 className="cart-title cart-product-title">{product.title}</h2>
-                    <h2 className="cart-text">{randomSize()} | {randomColor()}</h2>
-                    <h2 className="cart-text">UPC: {randomUPC()}</h2>
+                    <h2 className="cart-text">{randomSize(product.id)} | {randomColor(product.id)}</h2>
+                    <h2 className="cart-text">UPC: {randomUPC(product.id)}</h2>
                     <h2 className="cart-text">In Stock</h2>
                     <h2><span className="edit underline-edit">Edit</span></h2>
                   </div>
