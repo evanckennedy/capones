@@ -1,19 +1,3 @@
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import paymentImage from "../media/payments.png";
-import pay1 from "../media/mastercard.png";
-import pay2 from "../media/amex.png";
-import pay3 from "../media/applepay.png";
-import pay4 from "../media/payment0.png";
-import pay5 from "../media/discover.png";
-import pay6 from "../media/gpay.png";
-import pay7 from "../media/shop.png";
-import pay8 from "../media/visa.png";
-
-
 export default function Footer() {
 
   return (
