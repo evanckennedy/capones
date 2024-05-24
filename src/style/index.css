@@ -343,6 +343,7 @@ body {
   .pointer-text {
     cursor: pointer;
   }
+
   .error-message {
     height: 24px;
     text-align: center;
@@ -350,11 +351,13 @@ body {
     font-size: 15px;
     margin-top: 5px;
   }
+
   .sign-up-message {
     text-align: center;
     font-size: 15px;
     margin-top: 15px;
     cursor: default;
+
     span {
       font-weight: 600;
       cursor: pointer;
@@ -442,14 +445,12 @@ body {
 
 
 .product-image-box {
-  height: 650px;
+  height: 500px;
   width: 650px;
   background-color: var(--white);
   display: flex;
   justify-content: center;
   align-content: center;
-  /* filter: grayscale(100%); */
-
 
   img {
     padding: 50px;
@@ -461,25 +462,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-
-
-.sold-out-banner {
-  background-color: #666666;
-  color: var(--white);
-  position: absolute;
-  top: 55%;
-  width: 650px;
-  height: 45px;
-  text-align: center;
-  line-height: 45px;
+  width: 100%;
+  h2 {
+    line-height: 1;
+  }
 }
 
 .out-of-stock-pic {
   filter: grayscale(100%);
 }
-
+.product-title-n-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .product-rating {
   display: flex;
@@ -492,6 +488,10 @@ body {
     height: 24px;
     width: 24px;
   }
+
+  h2 {
+    font-weight: 400;
+  }
 }
 
 
@@ -499,6 +499,8 @@ body {
 .cost {
   margin: 10px 0;
   align-items: baseline;
+  font-size: 35px;
+  font-weight: 700;
 }
 
 .not-on-sale {
@@ -538,7 +540,7 @@ body {
 .size-chart {
   display: flex;
   gap: 20px;
-  height: 50px;
+  /* height: 50px; */
 
   align-items: center;
 
@@ -547,23 +549,21 @@ body {
     cursor: pointer;
   }
 
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
 }
 
 
 
-/* .size-chart-btn {
-  background-image: url("../media/measuring-tape.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: var(--background-main);
-  border: none;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  line-height: 50px;
-  margin-top: 10px;
-} */
+.size-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
 
 .sizes {
   display: flex;
@@ -600,6 +600,9 @@ body {
 
 .product-colors-title {
   margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .product-colors {
@@ -613,10 +616,6 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
-    &:hover {
-      border: 3px solid black;
-    }
   }
 
 
@@ -625,12 +624,22 @@ body {
 .color-btn-bg {
   height: 44px;
   width: 44px;
-  background-color: rgb(255, 255, 255);
-
+  border: 1px solid transparent;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+
+  button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--black);
+  }
+}
+
+.color-btn-bg.color-clicked {
+  border-color: black;
 }
 
 .color-btn-black-image {
@@ -642,7 +651,7 @@ body {
 }
 
 .color-btn-pink-image {
-  background-color: var(--pinkish-red);
+  background-color: rgb(233, 8, 8);
 }
 
 .color-btn-green-image {
@@ -651,11 +660,6 @@ body {
 
 .color-btn-blue-image {
   background-color: rgb(64, 64, 209);
-}
-
-.color-btn-active {
-  height: 44px;
-  width: 44px;
 }
 
 .color-btn-inactive {
@@ -719,17 +723,12 @@ body {
   background-color: var(--pinkish-red);
   color: var(--white);
   width: 100%;
-  height: 45px;
+  height: 47px;
   margin-top: 15px;
   border: none;
   cursor: pointer;
 
   transition: all ease 0.8s;
-
-  &:hover {
-    box-shadow: inset 500px 0 0 0 var(--pink-hover);
-  }
-
 }
 
 .inactive-btn {
@@ -922,11 +921,10 @@ body {
 
     border: 0px;
     outline: 0px;
-  
-  
+
+
     height: 40px;
     padding: 0 35px 0 20px;
-    /* border-radius: 25px; */
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
@@ -1136,7 +1134,7 @@ body {
 .cart-item-img {
   width: 190px;
   height: 200px;
-  padding: 23px 19px 23px 19px; 
+  padding: 23px 19px 23px 19px;
   background-color: var(--white);
 }
 
@@ -1158,6 +1156,12 @@ body {
 .cart-text {
   font-size: 16px;
   font-weight: 400;
+}
+
+.quantity h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .quantity-select {
@@ -1252,8 +1256,8 @@ body {
 }
 
 .light-border {
-background-color: var(--dark-gray);
-height: 1px;
+  background-color: var(--dark-gray);
+  height: 1px;
 }
 
 .bold-text-total {
