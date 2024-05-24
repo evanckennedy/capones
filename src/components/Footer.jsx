@@ -1,7 +1,7 @@
 export default function Footer() {
 
   return (
-    <>
+    <div className="footer">
       <div className='footer-divider'></div>
       <div className='footer-container container'>
         <div className='footer-box'>
@@ -43,6 +43,6 @@ export default function Footer() {
           <p>&copy;CAPONES All rights reserved.</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };

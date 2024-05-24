@@ -82,8 +82,10 @@ export default function Product() {
   }
 
   return (
-    <div className='container'>
-      {product && (
+    <div className='container product-page-container'>
+      {!product ? (
+        <div className='product-placeholder'>Loading...</div>
+      ) : (
         <div className='products'>
           <div className='product-image'>
             <div className='product-image-box'>
