@@ -56,7 +56,7 @@ export default function Footer() {
           </select>
         </div>
         <div className='footer-copywrite'>
-          <p>&copy; CAPONES All rights reserved</p>
+          <p>&copy;CAPONES All rights reserved.</p>
         </div>
       </div>
     </>
