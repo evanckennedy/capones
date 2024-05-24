@@ -84,15 +84,15 @@ export default function Cart() {
           <div className={`cart-checkout-section ${isLoading ? 'shimmer' : ''}`}>
             {
               cartProducts.map((product) => 
-                <div className="cart-item">
+                <div className="cart-item" key={product.id}>
                   <div className="cart-picture-box">
                     <img src={product.image} alt="Product Image" className="cart-item-img" />
                   </div>
                   <div className="cart-info-box">
                     <h2 className="cart-title cart-product-title">{product.title}</h2>
-                    <h2 class="cart-text">XS | WHITE</h2>
-                    <h2 class="cart-text">UPC: 29436937</h2>
-                    <h2 class="cart-text">In Stock</h2>
+                    <h2 className="cart-text">XS | WHITE</h2>
+                    <h2 className="cart-text">UPC: 29436937</h2>
+                    <h2 className="cart-text">In Stock</h2>
                     <h2><span className="edit underline-edit">Edit</span></h2>
                   </div>
                   <div className='cart-each-box cart-box'>
