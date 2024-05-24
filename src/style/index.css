@@ -1155,6 +1155,14 @@ body {
   font-weight: 600;
 }
 
+.cart-product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 77px;
+}
+
 .cart-total-price {
   font-weight: 400;
   font-size: 16px;

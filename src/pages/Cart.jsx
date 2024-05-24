@@ -89,7 +89,7 @@ export default function Cart() {
                     <img src={product.image} alt="Product Image" className="cart-item-img" />
                   </div>
                   <div className="cart-info-box">
-                    <h2 className="cart-title">{product.title}</h2>
+                    <h2 className="cart-title cart-product-title">{product.title}</h2>
                     <h2 class="cart-text">SKU</h2>
                     <h2 class="cart-text">In Stock</h2>
                     <h2><span className="edit underline-edit">Edit</span></h2>
