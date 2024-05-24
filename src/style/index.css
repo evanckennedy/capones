@@ -932,11 +932,9 @@ body {
 
   select {
     background-color: var(--white);
-
     border: 0px;
+    border-radius: 20px;
     outline: 0px;
-
-
     height: 40px;
     padding: 0 35px 0 20px;
     font-size: 20px;
