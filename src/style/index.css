@@ -999,13 +999,7 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  p:first-of-type::after {
-    /* This acts as a second line when the text only takes up one line. */
-    content: '\00a0';
-    /* Makes it start on a new line */
-    display: block;
+    min-height: 39px;
   }
 
   p:nth-of-type(2) {
