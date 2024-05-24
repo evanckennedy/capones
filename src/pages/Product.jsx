@@ -12,6 +12,7 @@ export default function Product() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeSize, setActiveSize] = useState('');
   const [activeColor, setActiveColor] = useState('');
+  const [clickedColor, setClickedColor] = useState('');
 
   let { slug } = useParams();
   const navigate = useNavigate();
@@ -108,13 +109,7 @@ export default function Product() {
               <h2>({product.rating.count} ratings)</h2>
             </div>
             <div className='cost'>
-              {sale(product.id) ? <h2 className='not-on-sale'>${product.price}</h2> :
-                <div className='sale'>
-                  <h2><span className='strike-through sale-small-text'>${product.price}</span></h2>
-                  <h2><span className='red-text sale-price'>${salePrice(product.price)}</span></h2>
-                  <h2><span className='red-text save sale-small-text'>Save ${Math.floor(product.price - salePrice(product.price))}</span></h2>
-                </div>
-              }
+              ${product.price}
             </div>
             <div className='size-chart'>
               <h2>Size</h2>
@@ -135,12 +130,13 @@ export default function Product() {
               <h2 className='product-colors-title'>COLOR</h2>
               <div className='product-colors'>
                 {['white-image', 'black-image', 'pink-image', 'green-image', 'blue-image'].map(color => (
-                  <div className='color-btn-bg'><button
-                    key={color}
-                    className={`color-btn-${color} ${activeColor === color ? 'color-btn-active' : 'color-btn-inactive'}`}
-                    onClick={() => handleColorClick(color)}
-                  >
-                  </button></div>
+                  <div className={`color-btn-bg ${clickedColor === color ? 'color-clicked' : ''}`} onClick={() => setClickedColor(color)}>
+                    <button
+                      key={color}
+                      className={`color-btn-${color}`}
+                      onClick={() => handleColorClick(color)}
+                    >
+                    </button></div>
                 ))}
               </div>
             </div>
@@ -164,7 +160,7 @@ export default function Product() {
         <div className="grid-container">
           {filteredProducts.map(product => (
             <ProductItem key={product.id} product={product} />
-          ))}  
+          ))}
         </div>
       </div>
     </div>
