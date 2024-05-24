@@ -1224,6 +1224,11 @@ body {
 /*  Checkout                                             */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+.cart-checkout-section {
+  min-width: 695px;
+  min-height: 1250px;
+}
+
 .checkout-section {
   background-color: var(--white);
   width: 360px;
