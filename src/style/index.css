@@ -436,6 +436,16 @@ body {
 /*  Product Page                                         */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+.product-placeholder {
+  height: 1500px;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+  font-size: 30px;
+}
+
 .products {
   margin-top: var(--vertical-section-spacings);
   margin-bottom: var(--vertical-section-spacings);
@@ -763,6 +773,7 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Footer                                               */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 
 .footer-divider {
   border-top: solid 1px var(--dark-gray);
