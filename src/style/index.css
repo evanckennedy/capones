@@ -1214,12 +1214,8 @@ body {
   height: 45px;
   border: 1px solid var(--black);
   background-color: var(--white);
-  padding: 13px 14px;
-  gap: 8px;
   font-size: 16px;
   font-weight: 600;
-  justify-content: center;
-  display: flex;
 }
 
 .order-details {
