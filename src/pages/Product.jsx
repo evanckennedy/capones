@@ -139,7 +139,7 @@ useEffect(() => {
             </div>
             <div className='quantity'>
               <h2>QUANTITY</h2>
-              <select className="quantity-select">
+              <select className="quantity-select-product">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

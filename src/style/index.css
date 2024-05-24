@@ -726,10 +726,10 @@ body {
   filter: grayscale(100%);
 }
 
-.quantity-select {
-  width: 130px;
+.quantity-select-product {
+  width: 110px;
   height: 34px;
-  padding-left: 4px;
+  text-align: center;
 }
 
 .add-to-cart {
