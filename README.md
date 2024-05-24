@@ -1,5 +1,5 @@
 # Capones
-Welcome to Capones, an online clothing store built with React and utilizing the Fake Store API. This README provides an overview of the project, including the structure, contributors, and functionality.
+Welcome to Capones, an online clothing store built with React and utilizing the Fake Store API.
 
 ## Project Overview
 Capones is an online store where users can browse, sort, and purchase clothing items. The project includes four main pages: Home, Product, Cart, and NotFound. The products are fetched from the Fake Store API, providing a diverse range of items.
