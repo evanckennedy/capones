@@ -11,7 +11,6 @@ export default function Product() {
   const [buttonActive, setButtonActive] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeSize, setActiveSize] = useState('');
-  const [activeColor, setActiveColor] = useState('');
   const [clickedColor, setClickedColor] = useState('');
 
   let { slug } = useParams();
@@ -28,13 +27,19 @@ useEffect(() => {
   html.style.scrollBehavior = prevScrollBehavior;
 
   if (isNaN(slug)) {
-    navigate('*');
+    navigate('/notfound');
   } else {
     const getProduct = async () => {
       try {
         const response = await axios.get(URL);
         const data = response.data;
         const productFound = data.find(product => product.id == slug);
+
+        if (!productFound) {
+          navigate('/notfound');
+          return;
+        }
+
         setProduct(productFound);
 
         const filteredData = data.filter(
@@ -46,32 +51,13 @@ useEffect(() => {
         setFilteredProducts(fourProducts);
       } catch (error) {
         console.error('Error, product not found', error);
+        navigate('/notfound');
       }
     };
 
     getProduct();
   }
 }, [slug, navigate]);
-
-  function generateSKU(number, title) {
-    let letters = title.slice(0, 4).toUpperCase().trim();
-    let number1 = (number * 547).toString().slice(0, 3);
-    let number2 = (number * 1483).toString().slice(0, 4);
-    let number3 = (number * 2267).toString().slice(0, 3);
-    return `SKU: ${letters}-${number1}-${number2}-${number3}`;
-  }
-
-  function sale(number) {
-    return number % 2 === 0;
-  }
-
-  function salePrice(price) {
-    return (price * 0.6).toFixed(2);
-  }
-
-  function colorChange(colorClass) {
-    setImageClass(colorClass);
-  }
 
   function inStock() {
     setAddToCart('add-to-cart');
