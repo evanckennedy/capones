@@ -1203,6 +1203,11 @@ body {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  background-image: url('../media/icon-trash-can.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 3px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
