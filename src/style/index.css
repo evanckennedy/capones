@@ -445,14 +445,12 @@ body {
 
 
 .product-image-box {
-  height: 650px;
+  height: 500px;
   width: 650px;
   background-color: var(--white);
   display: flex;
   justify-content: center;
   align-content: center;
-  /* filter: grayscale(100%); */
-
 
   img {
     padding: 50px;
@@ -464,29 +462,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  width: 100%;
   h2 {
     line-height: 1;
   }
 }
 
-
-
-.sold-out-banner {
-  background-color: #666666;
-  color: var(--white);
-  position: absolute;
-  top: 55%;
-  width: 650px;
-  height: 45px;
-  text-align: center;
-  line-height: 45px;
-}
-
 .out-of-stock-pic {
   filter: grayscale(100%);
 }
-
+.product-title-n-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .product-rating {
   display: flex;
@@ -510,7 +499,7 @@ body {
 .cost {
   margin: 10px 0;
   align-items: baseline;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 700;
 }
 
@@ -569,19 +558,12 @@ body {
 
 
 
-/* .size-chart-btn {
-  background-image: url("../media/measuring-tape.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: var(--background-main);
-  border: none;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  line-height: 50px;
-  margin-top: 10px;
-} */
+.size-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
 
 .sizes {
   display: flex;
@@ -741,7 +723,7 @@ body {
   background-color: var(--pinkish-red);
   color: var(--white);
   width: 100%;
-  height: 45px;
+  height: 47px;
   margin-top: 15px;
   border: none;
   cursor: pointer;
@@ -943,7 +925,6 @@ body {
 
     height: 40px;
     padding: 0 35px 0 20px;
-    /* border-radius: 25px; */
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;

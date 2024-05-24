@@ -66,11 +66,6 @@ export default function Product() {
     setImageClass(colorClass);
   }
 
-  function outOfStock() {
-    setAddToCart('inactive-btn');
-    setButtonActive(false);
-  }
-
   function inStock() {
     setAddToCart('add-to-cart');
     setButtonActive(true);
@@ -86,11 +81,6 @@ export default function Product() {
     }
   }
 
-  function handleColorClick(colorClass) {
-    setActiveColor(colorClass);
-    colorChange(colorClass);
-  }
-
   return (
     <div className='container'>
       {product && (
@@ -98,33 +88,35 @@ export default function Product() {
           <div className='product-image'>
             <div className='product-image-box'>
               <img src={product.image} alt="" className={imageClass} />
-              {!buttonActive ? <h2 className='sold-out-banner'>SOLD OUT</h2> : ""}
             </div>
           </div>
           <div className='product-information'>
-            <h2>{product.title}</h2>
-            <div className='product-rating'>
-              <img src={star} alt="star" />
-              <h2>{product.rating.rate}</h2>
-              <h2>({product.rating.count} ratings)</h2>
+            <div className="product-title-n-rating">
+              <h2 className='product-title'>{product.title}</h2>
+              <div className='product-rating'>
+                <img src={star} alt="star" />
+                <h2>{product.rating.rate}</h2>
+                <h2>({product.rating.count} ratings)</h2>
+              </div>
             </div>
             <div className='cost'>
               ${product.price}
             </div>
-            <div className='size-chart'>
-              <h2>Size</h2>
-              {/* <p>-size chart</p> */}
-            </div>
-            <div className='sizes'>
-              {['XS', 'S', 'M', 'L', 'XL'].map(size => (
-                <div
-                  key={size}
-                  onClick={() => handleSizeClick(size)}
-                  className={activeSize === size ? 'size-button-active' : 'size-button-inactive'}
-                >
-                  {size}
-                </div>
-              ))}
+            <div className="size-wrapper">
+              <div className='size-chart'>
+                <h2>SIZE</h2>
+              </div>
+              <div className='sizes'>
+                {['XS', 'S', 'M', 'L', 'XL'].map(size => (
+                  <div
+                    key={size}
+                    onClick={() => handleSizeClick(size)}
+                    className={activeSize === size ? 'size-button-active' : 'size-button-inactive'}
+                  >
+                    {size}
+                  </div>
+                ))}
+              </div>
             </div>
             <div>
               <h2 className='product-colors-title'>COLOR</h2>
@@ -134,7 +126,6 @@ export default function Product() {
                     <button
                       key={color}
                       className={`color-btn-${color}`}
-                      onClick={() => handleColorClick(color)}
                     >
                     </button></div>
                 ))}
@@ -150,8 +141,7 @@ export default function Product() {
                 <option>5</option>
               </select>
             </div>
-            <button className={addToCart}>ADD TO CART</button>
-            <p className='product-description'>{product.description}</p>
+            <button className={addToCart}>ADD TO BAG</button>
           </div>
         </div>
       )}
