@@ -122,12 +122,9 @@ export default function Product() {
               <h2 className='product-colors-title'>COLOR</h2>
               <div className='product-colors'>
                 {['white-image', 'black-image', 'pink-image', 'green-image', 'blue-image'].map(color => (
-                  <div className={`color-btn-bg ${clickedColor === color ? 'color-clicked' : ''}`} onClick={() => setClickedColor(color)}>
-                    <button
-                      key={color}
-                      className={`color-btn-${color}`}
-                    >
-                    </button></div>
+                  <div className={`color-btn-bg ${clickedColor === color ? 'color-clicked' : ''}`} key={color} onClick={() => setClickedColor(color)}>
+                    <button className={`color-btn-${color}`}></button>
+                  </div>
                 ))}
               </div>
             </div>
