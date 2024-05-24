@@ -440,13 +440,13 @@ body {
   margin-top: var(--vertical-section-spacings);
   margin-bottom: var(--vertical-section-spacings);
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 
 
 .product-image-box {
   height: 500px;
-  width: 650px;
+  width: 550px;
   background-color: var(--white);
   display: flex;
   justify-content: center;
@@ -475,6 +475,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  .product-title {
+    width: 100%;
+  }
 }
 
 .product-rating {
