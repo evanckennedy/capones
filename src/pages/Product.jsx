@@ -19,32 +19,39 @@ export default function Product() {
 
   const URL = 'https://fakestoreapi.com/products';
 
-  useEffect(() => {
-    if (isNaN(slug)) {
-      navigate('*');
-    } else {
-      const getProduct = async () => {
-        try {
-          const response = await axios.get(URL);
-          const data = response.data;
-          const productFound = data.find(product => product.id == slug);
-          setProduct(productFound);
+useEffect(() => {
+  const html = document.documentElement;
+  const prevScrollBehavior = window.getComputedStyle(html).scrollBehavior;
 
-          const filteredData = data.filter(
-            product =>
-              product.category === "men's clothing" || product.category === "women's clothing"
-          );
-          const removeChosenProduct = filteredData.filter(product => product.id != slug);
-          const fourProducts = removeChosenProduct.slice(1, 5);
-          setFilteredProducts(fourProducts);
-        } catch (error) {
-          console.error('Error, product not found', error);
-        }
-      };
+  html.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  html.style.scrollBehavior = prevScrollBehavior;
 
-      getProduct();
-    }
-  }, [slug, navigate]);
+  if (isNaN(slug)) {
+    navigate('*');
+  } else {
+    const getProduct = async () => {
+      try {
+        const response = await axios.get(URL);
+        const data = response.data;
+        const productFound = data.find(product => product.id == slug);
+        setProduct(productFound);
+
+        const filteredData = data.filter(
+          product =>
+            product.category === "men's clothing" || product.category === "women's clothing"
+        );
+        const removeChosenProduct = filteredData.filter(product => product.id != slug);
+        const fourProducts = removeChosenProduct.slice(1, 5);
+        setFilteredProducts(fourProducts);
+      } catch (error) {
+        console.error('Error, product not found', error);
+      }
+    };
+
+    getProduct();
+  }
+}, [slug, navigate]);
 
   function generateSKU(number, title) {
     let letters = title.slice(0, 4).toUpperCase().trim();

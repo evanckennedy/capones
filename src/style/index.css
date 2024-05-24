@@ -437,7 +437,7 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .product-placeholder {
-  height: 1500px;
+  height: 1000px;
   width: 100%;
   background-color: transparent;
   display: flex;
