@@ -119,7 +119,7 @@ export default function Cart() {
                   </div>
                   <div className='cart-each-box cart-box'>
                     <h2 className="cart-title">Each</h2>
-                    <h2 className="cart-text">${product.price}</h2>
+                    <h2 className="cart-text">${product.price.toFixed(2)}</h2>
                   </div>
                   <div className="cart-quantity-box cart-box">
                     <h2 className="cart-title">Quantity</h2>
