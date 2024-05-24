@@ -1186,8 +1186,9 @@ body {
 }
 
 .quantity-select {
-  padding: 3px 18px;
-  width: auto;
+  width: 56px;
+  height: 34px;
+  text-align: center;
   background-color: inherit;
   border: 1px solid var(--black);
 }
