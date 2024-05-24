@@ -27,13 +27,19 @@ useEffect(() => {
   html.style.scrollBehavior = prevScrollBehavior;
 
   if (isNaN(slug)) {
-    navigate('*');
+    navigate('/notfound');
   } else {
     const getProduct = async () => {
       try {
         const response = await axios.get(URL);
         const data = response.data;
         const productFound = data.find(product => product.id == slug);
+
+        if (!productFound) {
+          navigate('/notfound');
+          return;
+        }
+
         setProduct(productFound);
 
         const filteredData = data.filter(
@@ -45,6 +51,7 @@ useEffect(() => {
         setFilteredProducts(fourProducts);
       } catch (error) {
         console.error('Error, product not found', error);
+        navigate('/notfound');
       }
     };
 
