@@ -118,7 +118,7 @@ export default function Cart() {
                     <h2 className='cart-total-price'>${product.totalPrice.toFixed(2)}</h2>
                   </div>
                   <div className="cart-trash-box">
-                    <FaRegTrashCan className='trash-icon' onClick={() => handleRemoveItem(product.id)}/>
+                    <div className="trash-icon" onClick={() => handleRemoveItem(product.id)}></div>
                   </div>
                   <div>
                 </div>
@@ -153,15 +153,17 @@ export default function Cart() {
           <p className="sale-description">*Item prices exclude tax</p>
           </div>
           <button className="checkOut-btn">Checkout</button>
-          <p className="sale-description">We accept</p>
+          <p className="we-accept">We accept</p>
           <div className="div-cards-img">
             <img className="card-img" src={AmericanExpress} alt="American Express" />
             <img className="card-img" src={ApplePay} alt="Apple Pay" />
             <img className="card-img" src={Visa} alt="Visa Card" />
             <img className="card-img" src={Master} alt="Master Card" />
           </div>
-          <p className="checkout-bottom-text">Prices and shipping costs are not confirmed until you've reached checkout</p>
-          <p className="checkout-bottom-text">30-day returns. Read more about our <span className="returnPolicy underline">return and refund policy.</span></p>
+          <div className="checkout-bottom-text-wrapper">
+            <p className="checkout-bottom-text checkout-bottom-first-text">Prices and shipping costs are not confirmed until you've reached checkout</p>
+            <p className="checkout-bottom-text">30-day returns. Read more about our <span className="returnPolicy underline">return and refund policy.</span></p>
+          </div>
         </div>
         </div>
       </div>

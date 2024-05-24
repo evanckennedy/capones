@@ -1091,16 +1091,16 @@ body {
 
 
 .cart-shopping-bag {
-  font-size: 47px;
+  font-size: 42px;
   font-weight: 700;
   align-self: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: var(--vertical-section-spacings);
 }
 
 .cart-subtitle {
   align-self: flex-start;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   margin-top: 20px;
 }
@@ -1131,7 +1131,9 @@ body {
 
 .cart-box {
   width: 15%;
-  /* width: max-content; */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 
@@ -1203,6 +1205,11 @@ body {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  background-image: url('../media/icon-trash-can.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 3px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -1224,6 +1231,12 @@ body {
   justify-content: space-between;
   font-size: 16px;
   font-weight: 400;
+  p:first-of-type {
+    color: var(--dark-gray);
+  }
+  p {
+    color: var(--black);
+  }
 }
 
 .signin-btn {
@@ -1304,12 +1317,22 @@ body {
   width: 55px;
 }
 
+.checkout-bottom-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .checkout-bottom-text,
 .returnPolicy {
   text-decoration: none;
   color: var(--dark-gray);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 13px;
+}
+
+.checkout-bottom-first-text {
+  margin-top: 18px;
 }
 
 .underline {
