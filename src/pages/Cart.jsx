@@ -74,6 +74,24 @@ export default function Cart() {
     updateCartTotal(updatedCartProducts);
   };
 
+
+  function randomSize(){
+    const sizeSelection = ['XS','S',"M","L",'XL'];
+    return sizeSelection[(Math.floor(Math.random() * sizeSelection.length))];
+
+  }
+
+  function randomColor(){
+    const colorSelection = ['WHITE',"BLACK",'PINK'];
+    return colorSelection[(Math.floor(Math.random() * colorSelection.length))];
+  }
+
+  function randomUPC(){
+    let number = Math.floor((Math.random()*1000000000));
+    return (number);
+  }
+
+
   return (
     <div className="container">
       <h2 className="cart-shopping-bag">Shopping Bag</h2>
@@ -90,8 +108,8 @@ export default function Cart() {
                   </div>
                   <div className="cart-info-box">
                     <h2 className="cart-title cart-product-title">{product.title}</h2>
-                    <h2 className="cart-text">XS | WHITE</h2>
-                    <h2 className="cart-text">UPC: 29436937</h2>
+                    <h2 className="cart-text">{randomSize()} | {randomColor()}</h2>
+                    <h2 className="cart-text">UPC: {randomUPC()}</h2>
                     <h2 className="cart-text">In Stock</h2>
                     <h2><span className="edit underline-edit">Edit</span></h2>
                   </div>
