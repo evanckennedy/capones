@@ -960,7 +960,7 @@ body {
   position: relative;
   display: inline-block;
 
-  select {
+  .sort-button {
     background-color: var(--white);
     border: 0px;
     border-radius: 20px;
@@ -968,7 +968,7 @@ body {
     height: 40px;
     padding: 0 35px 0 20px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
     appearance: none;
   }
@@ -1060,7 +1060,7 @@ body {
 }
 
 .view-more-btn {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 22px;
   padding: 13px 19px;
   background-color: var(--black);
