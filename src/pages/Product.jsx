@@ -12,52 +12,53 @@ export default function Product() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeSize, setActiveSize] = useState('');
   const [clickedColor, setClickedColor] = useState('');
+  const [isFavorite, setIsFavorite] = useState(false);
 
   let { slug } = useParams();
   const navigate = useNavigate();
 
   const URL = 'https://fakestoreapi.com/products';
 
-useEffect(() => {
-  const html = document.documentElement;
-  const prevScrollBehavior = window.getComputedStyle(html).scrollBehavior;
+  useEffect(() => {
+    const html = document.documentElement;
+    const prevScrollBehavior = window.getComputedStyle(html).scrollBehavior;
 
-  html.style.scrollBehavior = 'auto';
-  window.scrollTo(0, 0);
-  html.style.scrollBehavior = prevScrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    html.style.scrollBehavior = prevScrollBehavior;
 
-  if (isNaN(slug)) {
-    navigate('/notfound');
-  } else {
-    const getProduct = async () => {
-      try {
-        const response = await axios.get(URL);
-        const data = response.data;
-        const productFound = data.find(product => product.id == slug);
+    if (isNaN(slug)) {
+      navigate('/notfound');
+    } else {
+      const getProduct = async () => {
+        try {
+          const response = await axios.get(URL);
+          const data = response.data;
+          const productFound = data.find(product => product.id == slug);
 
-        if (!productFound) {
+          if (!productFound) {
+            navigate('/notfound');
+            return;
+          }
+
+          setProduct(productFound);
+
+          const filteredData = data.filter(
+            product =>
+              product.category === "men's clothing" || product.category === "women's clothing"
+          );
+          const removeChosenProduct = filteredData.filter(product => product.id != slug);
+          const fourProducts = removeChosenProduct.slice(1, 5);
+          setFilteredProducts(fourProducts);
+        } catch (error) {
+          console.error('Error, product not found', error);
           navigate('/notfound');
-          return;
         }
+      };
 
-        setProduct(productFound);
-
-        const filteredData = data.filter(
-          product =>
-            product.category === "men's clothing" || product.category === "women's clothing"
-        );
-        const removeChosenProduct = filteredData.filter(product => product.id != slug);
-        const fourProducts = removeChosenProduct.slice(1, 5);
-        setFilteredProducts(fourProducts);
-      } catch (error) {
-        console.error('Error, product not found', error);
-        navigate('/notfound');
-      }
-    };
-
-    getProduct();
-  }
-}, [slug, navigate]);
+      getProduct();
+    }
+  }, [slug, navigate]);
 
   function inStock() {
     setAddToCart('add-to-cart');
@@ -133,7 +134,13 @@ useEffect(() => {
                 <option>5</option>
               </select>
             </div>
-            <button className={addToCart}>ADD TO BAG</button>
+            <div className="bag-and-fav-btns">
+              <button className={addToCart}>ADD TO BAG</button>
+              <button
+                className={`add-to-favorites ${isFavorite ? 'filled' : ''}`}
+                onClick={() => setIsFavorite(!isFavorite)}
+              />
+            </div>
           </div>
         </div>
       )}
