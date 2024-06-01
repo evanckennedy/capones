@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Judson:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-
-
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Utility Classes                                      */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -61,13 +59,6 @@ button {
 body {
   font-family: "Inter", serif;
 }
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  Component                                            */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Header                                               */
@@ -511,8 +502,6 @@ body {
   }
 }
 
-
-
 .cost {
   margin: 10px 0;
   align-items: baseline;
@@ -573,8 +562,6 @@ body {
   }
 }
 
-
-
 .size-wrapper {
   display: flex;
   flex-direction: column;
@@ -612,8 +599,6 @@ body {
   background-color: var(--white);
   color: var(--black);
 }
-
-
 
 .product-colors-title {
   margin-top: 15px;
@@ -683,8 +668,6 @@ body {
   height: 35px;
   width: 35px;
 }
-
-
 
 .product-black {
   background-color: var(--black);
@@ -784,8 +767,6 @@ body {
   cursor: pointer;
 }
 
-
-
 .product-description {
   margin-top: 15px;
 }
@@ -803,8 +784,6 @@ body {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Footer                                               */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
 .footer-divider {
   border-top: solid 1px var(--dark-gray);
   height: 1px;
@@ -1084,8 +1063,6 @@ body {
 }
 
 
-
-
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Gallery Animations                                   */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -1101,12 +1078,6 @@ body {
   transform: scale(1.02, 1.02);
 }
 
-
-
-
-
-
-
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Cart Page                                            */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -1114,9 +1085,8 @@ body {
 .cart-container {
   display: flex;
   justify-content: space-between;
-
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: var(--vertical-section-spacings);
   gap: 20px;
 }
 
@@ -1124,7 +1094,6 @@ body {
   display: flex;
   gap: 25px;
 }
-
 
 .cart-shopping-bag {
   font-size: 42px;
@@ -1153,6 +1122,8 @@ body {
 
 .cart-item:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .cart-picture-box {
