@@ -1085,9 +1085,8 @@ body {
 .cart-container {
   display: flex;
   justify-content: space-between;
-
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: var(--vertical-section-spacings);
   gap: 20px;
 }
 
@@ -1123,6 +1122,8 @@ body {
 
 .cart-item:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .cart-picture-box {
